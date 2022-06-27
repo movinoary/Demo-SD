@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import * as Assets from "../assets/index";
-import * as cssModule from "../styles/index";
+import * as Assets from "../../assets/index";
+import * as cssModule from "../../styles/index";
 
 const SubNav = ({ item }) => {
-  const navigate = useNavigate();
   const [subnav, setSubnav] = useState(false);
 
   const showSubnav = () => setSubnav(!subnav);

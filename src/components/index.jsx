@@ -1,7 +1,7 @@
-import Nav from "./nav";
-import NavDashboard from "./navDashboard";
-import SubNav from "./subNav";
-import { DataNavDashboard } from "./data/navDashboard";
+// Other
+import Nav from "./nav/nav";
+import SubNav from "./nav/subNav";
+import { DataNavDashboard } from "./nav/dataNav";
 import Header from "./header";
 import Footer from "./footer";
 import Title from "./title";
@@ -21,9 +21,14 @@ import CardCountDown from "./card/countDown";
 import { CardProfileLeft, CardProfileRight } from "./card/profile";
 import CardStatistics from "./card/statistics";
 
+//Table
+import DashAnnouncement from "./dashboard/announcement";
+import DashCalendar from "./dashboard/calendar";
+import DashUser from "./dashboard/user";
+
 export {
+  //Other
   Nav,
-  NavDashboard,
   SubNav,
   DataNavDashboard,
   Header,
@@ -31,6 +36,7 @@ export {
   Title,
   ModalLogin,
   ModalLogout,
+  //Card
   CardLink,
   CardFacility,
   CardActivity,
@@ -41,4 +47,8 @@ export {
   CardProfileLeft,
   CardProfileRight,
   CardStatistics,
+  // Table
+  DashAnnouncement,
+  DashCalendar,
+  DashUser,
 };

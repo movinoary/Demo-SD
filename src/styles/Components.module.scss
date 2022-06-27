@@ -449,6 +449,7 @@
   }
 }
 
+// Card
 .cardLink {
   width: 100%;
   height: 150px;
@@ -868,15 +869,17 @@
 }
 
 // DASHBOARD
-.navDashboard {
-  position: sticky;
+.dashboard {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
 
   header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 5vh;
     padding: 4vh;
     background-color: $black;
@@ -969,17 +972,24 @@
         color: $orangeBlack;
         transition: all 0.5s ease-out;
       }
+      p {
+        width: 100%;
+        text-align: center;
+        font-size: $fontM;
+        color: $orangeWhite;
+        transition: all 0.5s ease-out;
+      }
 
       &::after {
         content: "";
         margin-top: 100px;
         position: fixed;
-        width: 0;
+        width: 100px;
         transition: 1s;
       }
 
       &:hover::after {
-        content: "Profile";
+        content: "View Profile";
         font-size: $fontXS;
         color: $orange;
         background-color: rgba($color: $orangeWhite, $alpha: 0.6);
@@ -1134,12 +1144,38 @@
         color: $orangeBlack;
         transition: all 0.5s ease;
       }
+      p {
+        width: 0;
+        font-size: 0;
+      }
 
       &:hover {
         h2 {
           transition: all 0.5s ease;
           color: $orangeWhite;
         }
+      }
+
+      &::after {
+        content: "";
+        position: fixed;
+        width: 100px;
+        transition: 1s;
+      }
+
+      &:hover::after {
+        content: "View Profile";
+        font-size: $fontXS;
+        color: $orange;
+        background-color: $orangeWhite;
+        font-family: "Urbanist", sans-serif;
+        padding: 3px;
+        margin-top: -27px;
+        border-radius: 5px;
+        text-align: center;
+        width: 70px;
+        transition: 1s;
+        display: block;
       }
     }
     .menu {
@@ -1252,6 +1288,310 @@
       z-index: 1;
     }
   }
+
+  ::-webkit-scrollbar {
+    width: 17px;
+    z-index: 1;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $orange;
+    border-radius: 10px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: $orangeLight;
+  }
+}
+
+.userSection {
+  width: 100%;
+  height: 40rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba($color: #000000, $alpha: 1);
+  .userTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    h1 {
+      font-size: $fontXL;
+      color: $orangeWhite;
+      cursor: default;
+
+      span {
+        color: $orange;
+      }
+    }
+    button {
+      width: 170px;
+      @include buttonStandart(
+        transparent,
+        $orange,
+        $orange,
+        $orangeWhite,
+        $orange,
+        $orangeWhite,
+        $orange,
+        $orangeWhite,
+        $orange
+      );
+    }
+  }
+
+  .userTable {
+    padding: 5px;
+    height: 34rem;
+    overflow: auto;
+    cursor: default;
+
+    .tableProfile {
+      width: 100%;
+      border-collapse: collapse;
+      border: none;
+
+      thead {
+        background-color: $orangeGray;
+        border-bottom: 1px solid $orangeWhite;
+
+        th {
+          padding: 5px;
+          color: $orangeWhite;
+          font-size: $fontM;
+        }
+        th:nth-child(1) {
+          width: 4%;
+        }
+        th:nth-child(2) {
+          width: 18%;
+        }
+        th:nth-child(3) {
+          width: 10%;
+        }
+        th:nth-child(4) {
+          width: 5%;
+        }
+        th:nth-child(5) {
+          width: 10%;
+        }
+        th:nth-child(6) {
+          width: 5%;
+        }
+        th:nth-child(7) {
+          width: 10%;
+        }
+        th:nth-child(8) {
+          width: 18%;
+        }
+        th:nth-child(9) {
+          width: 10%;
+        }
+        th:nth-child(10) {
+          width: 10%;
+        }
+      }
+      tbody {
+        tr {
+          background-color: transparent;
+          td {
+            text-align: center;
+            color: $white;
+            padding: 5px;
+            font-size: $fontS;
+          }
+
+          td:nth-child(2) {
+            section {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              img {
+                width: 45px;
+                height: 45px;
+                margin-left: 10px;
+                border-radius: 100%;
+              }
+              div {
+                text-align: left;
+                margin-left: 10px;
+                width: 100%;
+                h2 {
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+
+          td:nth-child(10) {
+            button {
+              padding: 5px;
+              font-size: $fontM;
+              text-align: center;
+              border: none;
+              border-radius: 5px;
+              transition: 0.3s all ease;
+              cursor: pointer;
+            }
+            button:nth-child(1) {
+              background-color: $blue;
+              color: $black;
+              margin-right: 3px;
+
+              &:hover {
+                background-color: $blueLight;
+                transition: 0.3s all ease;
+              }
+            }
+
+            button:nth-child(2) {
+              background-color: $green;
+              color: $black;
+              margin: 0 7px;
+
+              &:hover {
+                background-color: $greenLight;
+                transition: 0.3s all ease;
+              }
+            }
+
+            button:nth-child(3) {
+              background-color: $red;
+              color: $black;
+
+              &:hover {
+                transition: 0.3s all ease;
+                background-color: $redLight;
+              }
+            }
+          }
+          &:nth-of-type(even) {
+            background-color: $orangeGray;
+          }
+
+          &:last-of-type {
+            border-bottom: 1px solid $orangeWhite;
+          }
+        }
+      }
+    }
+  }
+}
+
+.announcement {
+  width: 40%;
+  height: 220px;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: $orangeGray;
+  box-shadow: 0 0 15px rgba($color: #000000, $alpha: 1);
+
+  .announRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    .announTitle {
+      h1 {
+        font-size: $fontLX;
+        color: $orange;
+      }
+      h3 {
+        font-size: $fontLM;
+        color: $orangeWhite;
+        text-transform: capitalize;
+      }
+    }
+
+    .announIcon {
+      display: flex;
+      align-items: center;
+      color: $orangeLight;
+      font-size: $fontXXL;
+    }
+  }
+
+  .announDesc P {
+    padding: 5px 10px;
+    margin-top: 5px;
+    height: 100px;
+    overflow: auto;
+    font-size: $fontS;
+    text-align: justify;
+    color: $white;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      z-index: 1;
+    }
+  }
+}
+
+.calendar {
+  width: 17%;
+  height: 220px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $orange;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba($color: #000000, $alpha: 1);
+
+  .clock {
+    padding: 5px;
+    font-weight: 500;
+    font-size: $fontLM;
+    color: $orangeWhite;
+  }
+
+  .date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $orangeGray;
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+
+    .day {
+      color: $white;
+      font-size: $fontL;
+      font-weight: 500;
+    }
+    .date {
+      font-weight: 600;
+      font-size: $fontXXM;
+      color: $orange;
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      background-color: $white;
+    }
+
+    div {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      color: $white;
+      font-weight: 600;
+      font-size: $fontS;
+    }
+  }
 }
 
 .modalLogout {
@@ -1271,7 +1611,7 @@
     width: 25vw;
     height: 25vh;
     padding: 25px;
-    border-radius: 7px;
+    border-radius: 8px;
     background-color: $white;
 
     div:nth-child(1) {

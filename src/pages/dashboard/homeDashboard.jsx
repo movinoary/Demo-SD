@@ -1,16 +1,15 @@
 import React from "react";
 import * as cssModule from "../../styles/index";
+import * as Compoennts from "../../components/index";
 
 const HomeDashboard = () => {
   return (
     <div className={cssModule.Page.homeDashboard}>
-      <h1>Dashboard</h1>
-      <h1>Dashboard</h1>
-      <h1>Dashboard</h1>
-      <h1>Dashboard</h1>
-      <h1>Dashboard</h1>
-      <h1>Dashboard</h1>
-      <h1>Dashboard</h1>
+      <div className={cssModule.Page.topRow}>
+        <Compoennts.DashAnnouncement />
+        <Compoennts.DashCalendar />
+        <Compoennts.DashUser />
+      </div>
     </div>
   );
 };

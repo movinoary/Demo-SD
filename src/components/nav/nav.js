@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import * as AiIcons from "react-icons/ai";
-import * as cssModule from "../styles/index";
-import * as Components from "../components/index";
+import * as cssModule from "../../styles/index";
+import * as Components from "../index";
 
 const Nav = () => {
   const [click, setClick] = useState(false);

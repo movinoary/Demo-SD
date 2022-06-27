@@ -1,5 +1,5 @@
 import * as Configs from "./configs/index";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (

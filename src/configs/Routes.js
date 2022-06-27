@@ -38,7 +38,7 @@ const RoutesDashboard = () => {
         showModal={showModalLogout}
         setShowModal={setShowModalLogout}
       />
-      <div className={cssModule.Components.navDashboard}>
+      <div className={cssModule.Components.dashboard}>
         <header>
           <div>
             <div onClick={handleClick}>
@@ -68,6 +68,7 @@ const RoutesDashboard = () => {
                 alt="profile"
               />
               <h2>Irene</h2>
+              <p>Irene@mail.com</p>
             </Link>
             <div>
               {Components.DataNavDashboard.map((item, index) => {
