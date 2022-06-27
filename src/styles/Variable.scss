@@ -1,0 +1,91 @@
+// Color
+$blueDark: #22577e;
+$blue: #5584ac;
+$blueLight: #95d1cc;
+$blueWhite: #d4f4f6;
+$orangeBlack: #1b1a17;
+$orangeGray: #3a3535;
+$orange: #e45826;
+$orangeLight: #f0a500;
+$orangeWhite: #e6d5b8;
+$grey: #dddddd;
+$greyLight: #eeeeee;
+$white: #ffffff;
+$black: #000000;
+
+// font Size
+$fontXXL: 5rem;
+$fontXXM: 4rem;
+$fontXL: 3rem;
+$fontLX: 2.5rem;
+$fontL: 2rem;
+$fontLM: 1.5rem;
+$fontM: 1.3rem;
+$fontS: 1rem;
+$fontXS: 0.75rem;
+
+@mixin layout {
+  width: 100%;
+  padding: 3% 5%;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin buttonStandart(
+  $background,
+  $color,
+  $border,
+  $backgroundHover,
+  $colorHover,
+  $borderHover,
+  $backgroundActive,
+  $colorActive,
+  $borderActive
+) {
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: $fontM;
+  cursor: pointer;
+  background-color: $background;
+  color: $color;
+  border: 2px solid $border;
+  transition: all 0.5s ease-in;
+  font-weight: 500;
+  text-transform: capitalize;
+
+  &:hover {
+    background-color: $backgroundHover;
+    color: $colorHover;
+    border: 2px solid $borderHover;
+    transition: all 0.7s ease-out;
+  }
+
+  &:active {
+    background-color: $backgroundActive;
+    color: $colorActive;
+    border: 2px solid $borderActive;
+    transition: all 0.3s ease-in;
+  }
+}
+
+@mixin input {
+  width: 100%;
+  padding: 10px;
+  font-size: $fontM;
+  background-color: transparent;
+  color: $blueWhite;
+  border: none;
+  border-bottom: 2px solid $blue;
+
+  &::placeholder {
+    color: $blueLight;
+  }
+}
+
+@mixin hoverImgScale {
+  &:hover > img {
+    transition: 0.3s;
+    transform: scale(1.1);
+  }
+}

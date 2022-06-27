@@ -1,0 +1,243 @@
+@import "./Variable.scss";
+
+.statistics {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+  background-color: $blue;
+  padding: 2% 3%;
+  cursor: default;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    p {
+      font-size: $fontL;
+      color: $white;
+      font-weight: 600;
+    }
+    h3 {
+      font-size: $fontLM;
+      color: $blueWhite;
+      font-weight: 700;
+      text-transform: capitalize;
+      line-height: 30px;
+    }
+  }
+}
+
+.home {
+  @include layout();
+
+  .principal {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .desc {
+      width: 100%;
+      margin-right: 50px;
+      font-size: $fontM;
+      text-align: justify;
+      padding: 30px;
+    }
+
+    .image {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+
+      div:nth-child(1) {
+        @include hoverImgScale();
+        overflow: hidden;
+        margin-top: -80px;
+        margin-right: -180px;
+        width: 550px;
+        height: 350px;
+        z-index: 1;
+      }
+      div:nth-child(2) {
+        @include hoverImgScale();
+        overflow: hidden;
+        margin-bottom: -100px;
+        width: 300px;
+        height: 400px;
+        z-index: 2;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        transition: all 0.7s ease;
+      }
+    }
+  }
+
+  .grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1rem;
+  }
+
+  .rowFacility {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 3rem;
+  }
+
+  .rowNews {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+}
+
+.gridProfile {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  background-color: $blueLight;
+  padding: 4% 2%;
+}
+
+.gridProfileGuru {
+  padding: 3% 4%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.gridProfileSekolah {
+  @include layout();
+  width: 100%;
+
+  section {
+    width: 100%;
+    height: 70vh;
+    padding: 3rem;
+    overflow: auto;
+    background-color: $white;
+
+    .left {
+      width: 50.7%;
+      display: flex;
+      justify-content: flex-start;
+      border-right: 10px solid $blueDark;
+    }
+    .right {
+      margin-left: 50%;
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+      border-left: 10px solid $blueDark;
+    }
+  }
+}
+
+.news {
+  @include layout();
+
+  .row {
+    margin-bottom: 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+  }
+}
+
+.detailBerita {
+  @include layout();
+  align-items: center;
+  justify-content: center;
+
+  .header {
+    width: 100%;
+    height: 550px;
+    display: flex;
+    flex-direction: row;
+
+    img {
+      width: 100%;
+      height: 100;
+    }
+    .data {
+      width: 30%;
+      padding: 3rem;
+
+      .desc {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+
+        h3 {
+          font-size: $fontL;
+          color: $blueDark;
+          text-transform: capitalize;
+        }
+
+        p {
+          text-transform: capitalize;
+          font-size: $fontLM;
+        }
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    P {
+      font-size: $fontM;
+      text-align: justify;
+    }
+  }
+}
+
+.video {
+  @include layout();
+
+  .row {
+    margin-bottom: 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(490px, 1fr));
+    gap: 1rem;
+  }
+}
+
+// Dashboard
+.sectionDashboard {
+  display: flex;
+  flex-direction: row;
+}
+
+.routeDashboard {
+  width: 100%;
+  background-color: $orangeBlack;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 992px) {
+  .gridProfile {
+    padding: 11% 2% 3% 2%;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 576px) {
+  .gridProfile {
+    padding: 20% 2% 3% 2%;
+  }
+}
