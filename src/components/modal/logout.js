@@ -32,7 +32,7 @@ const ModalLogout = ({ showModal, setShowModal }) => {
     <>
       {showModal ? (
         <motion.div
-          className={cssModule.Components.modalLogout}
+          className={cssModule.Widget.modalLogout}
           onClick={closeModal}
           ref={modalRef}
           initial="out"
@@ -42,7 +42,7 @@ const ModalLogout = ({ showModal, setShowModal }) => {
           transition={Assets.transition}
         >
           <motion.div
-            className={cssModule.Components.modalRow}
+            className={cssModule.Widget.modalRow}
             initial="out"
             animate="in"
             exit="out"

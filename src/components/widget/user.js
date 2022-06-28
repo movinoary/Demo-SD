@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as cssModule from "../../styles/index";
 
-const DashUser = () => {
+const WidgetUser = () => {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
+
   return (
-    <section className={cssModule.Components.userSection}>
-      <div className={cssModule.Components.userTitle}>
+    <section className={cssModule.Widget.userSection}>
+      <div className={cssModule.Widget.userTitle}>
         <h1>
           All <span>User</span>
         </h1>
@@ -13,8 +17,21 @@ const DashUser = () => {
           <FaIcons.FaUserPlus />
         </button>
       </div>
-      <div className={cssModule.Components.userTable}>
-        <table className={cssModule.Components.tableProfile}>
+      <div className={cssModule.Widget.userTable}>
+        {click ? (
+          <div className={cssModule.Widget.userInfo}>
+            <p>Admin : No Lock Everthing </p>
+            <h3>|</h3>
+            <p>SuUser : Edit Data Unlock, Dashboard Lock</p>
+            <h3>|</h3>
+            <p>User : Just Add Data</p>
+            <h3>|</h3>
+            <p>Reporter : Just Add Edit Dashboard News </p>
+          </div>
+        ) : (
+          <div className={cssModule.Widget.userInfoOut} />
+        )}
+        <table className={cssModule.Widget.tableProfile}>
           <thead>
             <tr>
               <th>No</th>
@@ -25,8 +42,10 @@ const DashUser = () => {
               <th>Status</th>
               <th>telepon</th>
               <th>alamat</th>
-              <th>role</th>
-              <th>aksi</th>
+              <th>
+                role <button onClick={handleClick}>i</button>
+              </th>
+              <th>action</th>
             </tr>
           </thead>
           <tbody>
@@ -70,4 +89,4 @@ const DashUser = () => {
   );
 };
 
-export default DashUser;
+export default WidgetUser;

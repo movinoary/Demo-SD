@@ -1,3 +1,5 @@
-import { RoutesHome, RoutesDashboard } from "./Routes";
+import RoutesHome from "./Routes";
+import RoutesAdmin from "./RoutesAdmin";
+import RoutesUser from "./RoutesUser";
 
-export { RoutesHome, RoutesDashboard };
+export { RoutesHome, RoutesAdmin, RoutesUser };

@@ -1,0 +1,513 @@
+@import "./Variable.scss";
+
+.userSection {
+  width: 100%;
+  height: 40rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba($color: #000000, $alpha: 1);
+  .userTitle {
+    @include titleDashboard();
+  }
+
+  .userTable {
+    padding: 5px;
+    height: 34rem;
+    overflow: auto;
+    cursor: default;
+
+    .userInfo {
+      width: 100%;
+      height: 30px;
+      padding: 5px 20px;
+      border-radius: 3px;
+      text-align: right;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      transition: $slowIn;
+      font-size: $fontS;
+      background-color: $orange;
+      h3 {
+        color: $black;
+      }
+      p {
+        color: $white;
+      }
+    }
+
+    .userInfoOut {
+      width: 100%;
+      font-size: 0;
+      height: 0;
+      transition: $slowOut;
+    }
+
+    .tableProfile {
+      @include table();
+      th:nth-child(1) {
+        width: 4%;
+      }
+      th:nth-child(2) {
+        width: 18%;
+      }
+      th:nth-child(3) {
+        width: 10%;
+      }
+      th:nth-child(4) {
+        width: 5%;
+      }
+      th:nth-child(5) {
+        width: 10%;
+      }
+      th:nth-child(6) {
+        width: 5%;
+      }
+      th:nth-child(7) {
+        width: 10%;
+      }
+      th:nth-child(8) {
+        width: 18%;
+      }
+      th:nth-child(9) {
+        width: 10%;
+        button {
+          color: $orange;
+          background-color: transparent;
+          cursor: pointer;
+          font-size: $fontXS;
+          margin-left: 10px;
+          font-family: "Urbanist", sans-serif;
+          border: 1px solid $orange;
+          padding: 3px 5px;
+          border-radius: 100px;
+        }
+      }
+      th:nth-child(10) {
+        width: 10%;
+      }
+      td:nth-child(2) {
+        section {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          img {
+            width: 45px;
+            height: 45px;
+            margin-left: 10px;
+            border-radius: 100%;
+          }
+          div {
+            text-align: left;
+            margin-left: 10px;
+            width: 100%;
+            h2 {
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      td:nth-child(10) {
+        @include buttonTable();
+      }
+    }
+  }
+}
+
+.announcement {
+  @include widgetCard(35%, column, transparent);
+  padding: 20px;
+
+  .announRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    .announTitle {
+      h1 {
+        font-size: $fontLX;
+        color: $orange;
+      }
+      h3 {
+        font-size: $fontLM;
+        color: $orangeWhite;
+        text-transform: capitalize;
+      }
+    }
+
+    .announIcon {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      color: $orange;
+      font-size: $fontXXM;
+      margin-right: 30px;
+      button {
+        font-size: $fontS;
+        @include buttonStandart(
+          transparent,
+          $orange,
+          $orange,
+          $orangeWhite,
+          $orange,
+          $orangeWhite,
+          $orange,
+          $orangeWhite,
+          $orange
+        );
+      }
+    }
+  }
+
+  .announDesc P {
+    padding: 5px 10px;
+    margin-top: 5px;
+    height: 130px;
+    overflow: auto;
+    font-size: $fontS;
+    text-align: justify;
+    color: $white;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      z-index: 1;
+    }
+  }
+}
+
+.calendar {
+  @include widgetCard(15%, column, transparent);
+
+  .clock {
+    width: 100%;
+    text-align: center;
+    background-color: $orange;
+    padding: 5px;
+    font-weight: 500;
+    font-size: $fontLM;
+    color: $orangeWhite;
+  }
+
+  .date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+
+    .day {
+      color: $white;
+      font-size: $fontL;
+      font-weight: 500;
+    }
+    .date {
+      font-weight: 600;
+      font-size: $fontXXM;
+      color: $orange;
+      width: 100px;
+      height: 100px;
+      margin: 12px 0;
+      border-radius: 100%;
+      background-color: $white;
+    }
+
+    div {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      color: $white;
+      font-weight: 600;
+      font-size: $fontS;
+    }
+  }
+}
+
+.todoList {
+  @include widgetCard(50%, column, transparent);
+
+  .todoForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+
+    h2 {
+      font-size: $fontLM;
+      color: $orange;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      label {
+        color: $orange;
+        font-size: $fontXS;
+        margin: 3px 0 0 5px;
+      }
+
+      input {
+        background-color: transparent;
+        color: $orangeWhite;
+        border: none;
+        border-bottom: 1px solid $orange;
+        font-size: $fontS;
+        padding: 3px 5px;
+
+        &::placeholder {
+          color: rgba($color: $orangeWhite, $alpha: 0.5);
+        }
+
+        &::-webkit-calendar-picker-indicator {
+          display: none;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    button {
+      padding: 3px 5px;
+      text-align: center;
+      font-size: $fontLM;
+      text-align: center;
+      border: none;
+      transition: 0.3s all ease;
+      cursor: pointer;
+      height: 100%;
+      background-color: transparent;
+      color: $orange;
+      transition: $slowOut;
+      &:hover {
+        color: $orangeLight;
+        transition: $slowIn;
+      }
+    }
+  }
+
+  .todotable {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    table {
+      @include table();
+      td {
+        button {
+          padding: 3px 5px;
+          text-align: center;
+          font-size: $fontM;
+          text-align: center;
+          border: none;
+          transition: 0.3s all ease;
+          cursor: pointer;
+          height: 100%;
+          background-color: transparent;
+          transition: $slowOut;
+
+          &:nth-child(1) {
+            color: $green;
+            &:hover {
+              color: $greenLight;
+              transition: $slowIn;
+            }
+          }
+          &:nth-child(2) {
+            color: $red;
+            &:hover {
+              color: $redLight;
+              transition: $slowIn;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cardLink {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  .link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 130px;
+    padding: 15px 0;
+    margin: 1rem 0;
+    border-radius: 7px;
+    text-decoration: none;
+    background-color: $orangeGray;
+    border: 1px solid $orangeGray;
+    box-shadow: 0 0 15px rgba($color: #000000, $alpha: 1);
+    transition: $slowOut;
+    p {
+      color: $orange;
+      font-size: $fontL;
+      margin-bottom: 5px;
+    }
+    h2 {
+      color: $orangeWhite;
+      font-size: $fontLM;
+      font-weight: 500;
+      span {
+        color: $orange;
+        margin-left: 3px;
+      }
+    }
+    &:hover {
+      border: 1px solid $orange;
+      transition: $slowIn;
+    }
+    &:valid {
+      background-color: aqua;
+    }
+  }
+}
+
+.cardInformasi {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+
+  button {
+    @include buttonStandart(
+      transparent,
+      $orange,
+      $orangeWhite,
+      $black,
+      $orange,
+      $orange,
+      $orange,
+      $orangeWhite,
+      $orangeWhite
+    );
+  }
+
+  .information {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+
+    h2 {
+      font-size: $fontL;
+      color: $orange;
+    }
+
+    .informationRow {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: $fontL;
+      color: $orange;
+      border: 2px solid $orangeWhite;
+      padding: 10px;
+
+      div {
+        margin: 5px 20px;
+        font-size: $fontM;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        span {
+          font-family: "Alegreya Sans SC", sans-serif;
+          font-weight: 500;
+        }
+        p {
+          font-size: $fontS;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
+      }
+    }
+  }
+}
+
+.modalLogout {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($color: #000000, $alpha: 0.8);
+
+  .modalRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25vw;
+    height: 25vh;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: $white;
+
+    div:nth-child(1) {
+      h2 {
+        font-size: $fontL;
+      }
+      p {
+        font-size: $fontM;
+        margin-left: 10px;
+      }
+    }
+
+    div:nth-child(2) {
+      width: 100%;
+      border-top: 1px solid $black;
+      padding-top: 12px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      button:nth-child(1) {
+        margin-right: 10px;
+        width: 100px;
+        @include buttonStandart(
+          transparent,
+          $orangeLight,
+          $orangeLight,
+          $orangeWhite,
+          $orange,
+          $orangeWhite,
+          $orange,
+          $orangeWhite,
+          $orangeWhite
+        );
+      }
+      button:nth-child(2) {
+        margin-left: 10px;
+        width: 100px;
+        @include buttonStandart(
+          $orange,
+          $orangeWhite,
+          $orange,
+          $orangeLight,
+          $orangeBlack,
+          $orangeBlack,
+          $orange,
+          $orangeWhite,
+          $orangeWhite
+        );
+      }
+    }
+  }
+}

@@ -54,7 +54,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
               <div>
                 <AiIcons.AiOutlineClose
                   className={cssModule.Components.close}
-                  onClick={() => navigate("/dashboard")}
+                  onClick={() => navigate("/admin-dashboard")}
                 />
                 <h1>Login</h1>
                 <form>

@@ -5,7 +5,8 @@ function App() {
   return (
     <Routes>
       <Route exact path="/*" element={<Configs.RoutesHome />} />
-      <Route exact path="dashboard/*" element={<Configs.RoutesDashboard />} />
+      <Route exact path="admin-dashboard/*" element={<Configs.RoutesAdmin />} />
+      <Route exact path="user-dashboard/*" element={<Configs.RoutesUser />} />
     </Routes>
   );
 }

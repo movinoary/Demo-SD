@@ -13,20 +13,20 @@ const SubNav = ({ item }) => {
     <>
       <div
         onClick={item.subNav && showSubnav}
-        className={cssModule.Components.menu}
+        className={cssModule.Dashboard.menu}
       >
         {item.path ? (
-          <Link className={cssModule.Components.list} to={item.path}>
+          <Link className={cssModule.Dashboard.list} to={item.path}>
             <span>{item.icon}</span>
             <p>{item.title}</p>
           </Link>
         ) : (
-          <div className={cssModule.Components.list}>
+          <div className={cssModule.Dashboard.list}>
             <span>{item.icon}</span>
             <p>{item.title}</p>
           </div>
         )}
-        <div className={cssModule.Components.arrow}>
+        <div className={cssModule.Dashboard.arrow}>
           {item.subNav && subnav
             ? item.iconOpened
             : item.subNav
@@ -40,7 +40,7 @@ const SubNav = ({ item }) => {
             <Link
               to={item.path}
               key={index}
-              className={cssModule.Components.subMenu}
+              className={cssModule.Dashboard.subMenu}
             >
               <motion.span
                 initial="out"

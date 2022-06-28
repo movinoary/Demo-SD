@@ -6,8 +6,22 @@ import * as ImIcons from "react-icons/im";
 export const DataNavDashboard = [
   {
     title: "Dashboard",
-    path: "/dashboard",
+    path: "/admin-dashboard",
     icon: <RiIcons.RiDashboardFill />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+  },
+  {
+    title: "User Dashboard",
+    path: "/user-dashboard",
+    icon: <RiIcons.RiDashboardFill />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+  },
+  {
+    title: "View Home",
+    path: "view-home",
+    icon: <FaIcons.FaHome />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
   },
@@ -19,27 +33,22 @@ export const DataNavDashboard = [
     subNav: [
       {
         title: "Anggaran",
-        path: "/dashboard/profile",
+        path: "database/anggaran",
         icon: <FaIcons.FaDatabase />,
       },
       {
         title: "Berita",
-        path: "/dashboard/berita",
+        path: "database/berita",
         icon: <FaIcons.FaDatabase />,
       },
       {
-        title: "Fasilitas",
-        path: "/dashboard/fasilitas",
+        title: "Galeri",
+        path: "database/galeri",
         icon: <FaIcons.FaDatabase />,
       },
       {
-        title: "Kegiatan",
-        path: "/dashboard/kegiatan",
-        icon: <FaIcons.FaDatabase />,
-      },
-      {
-        title: "Video",
-        path: "/dashboard/video",
+        title: "Informasi",
+        path: "database/informasi",
         icon: <FaIcons.FaDatabase />,
       },
     ],

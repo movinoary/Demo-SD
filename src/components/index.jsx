@@ -21,10 +21,16 @@ import CardCountDown from "./card/countDown";
 import { CardProfileLeft, CardProfileRight } from "./card/profile";
 import CardStatistics from "./card/statistics";
 
-//Table
-import DashAnnouncement from "./dashboard/announcement";
-import DashCalendar from "./dashboard/calendar";
-import DashUser from "./dashboard/user";
+// Widget
+import {
+  WidgetAnnouncementAdmin,
+  WidgetAnnouncementUser,
+} from "./widget/announcement";
+import WidgetCalendar from "./widget/calendar";
+import WidgetUser from "./widget/user";
+import { WidgetTodoListAdmin, WidgetTodoListUser } from "./widget/todoList";
+import WidgetLink from "./widget/link";
+import WidgetInformation from "./widget/information";
 
 export {
   //Other
@@ -47,8 +53,13 @@ export {
   CardProfileLeft,
   CardProfileRight,
   CardStatistics,
-  // Table
-  DashAnnouncement,
-  DashCalendar,
-  DashUser,
+  // Widget
+  WidgetAnnouncementAdmin,
+  WidgetAnnouncementUser,
+  WidgetCalendar,
+  WidgetUser,
+  WidgetTodoListAdmin,
+  WidgetTodoListUser,
+  WidgetLink,
+  WidgetInformation,
 };
