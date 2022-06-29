@@ -4,12 +4,12 @@ import * as AiIcons from "react-icons/ai";
 import * as GrIcons from "react-icons/gr";
 import * as cssModule from "../../styles/index";
 
-const DatabasePengumumanSekolah = () => {
+const DatabaseBeritaBeranda = () => {
   return (
     <section className={cssModule.Dashboard.database}>
       <div className={cssModule.Dashboard.databaseTitle}>
         <h1>
-          Pengumuman <span>Sekolah</span>
+          Berita <span>Beranda</span>
         </h1>
         <button>Tambah</button>
       </div>
@@ -165,4 +165,4 @@ const DatabasePengumumanSekolah = () => {
   );
 };
 
-export default DatabasePengumumanSekolah;
+export default DatabaseBeritaBeranda;

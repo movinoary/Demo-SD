@@ -6,11 +6,12 @@ const UserDashboard = () => {
   return (
     <div className={cssModule.Dashboard.homeDashboard}>
       <div className={cssModule.Dashboard.topRow}>
-        <div className={cssModule.Dashboard.top}>
-          <Compoennts.WidgetTodoListUser />
-          <Compoennts.WidgetAnnouncementUser />
+        <div className={cssModule.Dashboard.topLeft}>
           <Compoennts.WidgetCalendar />
+          <Compoennts.WidgetAnnouncementUser />
+          <Compoennts.WidgetTodoListUser />
         </div>
+        <Compoennts.WidgetProfile />
       </div>
     </div>
   );

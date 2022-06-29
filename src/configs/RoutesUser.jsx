@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import { Route, Routes, Link } from "react-router-dom";
 import * as MdIcons from "react-icons/md";
+import * as BsIcons from "react-icons/bs";
 import * as Components from "../components/index";
 import * as cssModule from "../styles/index";
 import * as Page from "../pages/index";
 
 const RoutesUser = () => {
   const [click, setClick] = useState(false);
+  const [color, setColor] = useState(false);
   const [showModalLogout, setShowModalLogout] = useState(false);
 
   const LogoutModal = () => {
     setShowModalLogout(prev => !prev);
   };
+
+  function handleColor() {
+    setColor(!color);
+  }
 
   function handleClick() {
     setClick(!click);
@@ -40,7 +46,26 @@ const RoutesUser = () => {
             </Link>
           </div>
           <div>
-            <button onClick={LogoutModal}>logout</button>
+            {color ? (
+              <div
+                onClick={handleColor}
+                className={cssModule.Dashboard.colorWhite}
+              >
+                <BsIcons.BsFillSunFill
+                  className={cssModule.Dashboard.colorLight}
+                />
+              </div>
+            ) : (
+              <div
+                onClick={handleColor}
+                className={cssModule.Dashboard.colorBlack}
+              >
+                <BsIcons.BsFillMoonFill
+                  className={cssModule.Dashboard.colorDark}
+                />
+              </div>
+            )}
+            <button onClick={LogoutModal}>Keluar</button>
           </div>
         </header>
         <section className={cssModule.Dashboard.sectionDashboard}>
@@ -51,16 +76,15 @@ const RoutesUser = () => {
                 : cssModule.Dashboard.footerDashboard
             }
           >
-            <Link to="profile" className={cssModule.Dashboard.profile}>
+            <div className={cssModule.Dashboard.profile}>
               <img
-                src="https://i.pinimg.com/736x/f8/f0/a2/f8f0a252e3ebe2d13dad1373001160eb.jpg"
+                src="https://i.pinimg.com/564x/11/50/82/115082111ba44cb03a13f6efafd09d2b.jpg"
                 alt="profile"
               />
               <h2>Irene</h2>
-              <p>Irene@mail.com</p>
-            </Link>
+            </div>
             <div>
-              {Components.DataNavDashboard.map((item, index) => {
+              {Components.DataNavDashboardUser.map((item, index) => {
                 return <Components.SubNav item={item} key={index} />;
               })}
             </div>
@@ -68,8 +92,7 @@ const RoutesUser = () => {
           <div className={cssModule.Dashboard.routeDashboard}>
             <Routes>
               <Route exact path="/" element={<Page.UserDashboard />} />
-              <Route exact path="profile" element={<Page.ProfileDashboard />} />
-              <Route exact path="*" element={<Page.BlankPageDashboard />} />
+              <Route exact path="*" element={<Page.BlankPageDashboardUser />} />
             </Routes>
           </div>
         </section>

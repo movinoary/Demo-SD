@@ -9,9 +9,9 @@ const PembelajaranProta = () => {
       <h1>Pembelajaran Prota</h1>
       <div className={cssModule.Dashboard.topSelect}>
         <div>
-          <h2>Teacher</h2>
+          <h2>Guru</h2>
           <select>
-            <option hidden>Teacher | Class</option>
+            <option hidden>Guru | Kelas</option>
             <option>Irene | Kelas 1A</option>
             <option>Sana | Kelas 1B</option>
             <option>Lia | Kelas 2A</option>

@@ -2,7 +2,7 @@
 
 .userSection {
   width: 50%;
-  height: 30rem;
+  height: 35rem;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba($color: #000000, $alpha: 1);
@@ -100,8 +100,176 @@
   }
 }
 
+.widgetProfile {
+  @include widgetCard(27.5%, 550px, column, transparent);
+
+  .topProfile {
+    padding: 1rem 2rem;
+    background-color: $orange;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    div {
+      text-align: right;
+      h1 {
+        font-size: $fontL;
+        color: $orangeBlack;
+      }
+      p {
+        font-size: $fontMS;
+        color: $white;
+      }
+      button {
+        padding: 0;
+        height: 0;
+        width: 100%;
+        border-radius: 5px;
+        margin: 1rem 0 -1rem 0;
+        font-size: 0;
+        cursor: pointer;
+        background-color: $black;
+        color: $orange;
+        border: none;
+        transition: all 0.5s ease-in;
+        font-weight: 500;
+        text-transform: capitalize;
+
+        &:hover {
+          background-color: $orangeWhite;
+          color: $black;
+          transition: all 0.5s ease-out;
+        }
+      }
+    }
+    img {
+      width: 130px;
+      height: 130px;
+      margin-left: 20px;
+      border-radius: 100%;
+    }
+    &:hover {
+      button {
+        width: 100%;
+        padding: 5px;
+        margin: 1rem 0 -1rem 0;
+        height: 100%;
+        font-size: $fontS;
+      }
+    }
+  }
+
+  .centerProfile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+
+    background-color: $orangeGray;
+    font-size: $fontL;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+      transition: $slowIn;
+      color: $white;
+      p {
+        font-size: 0;
+        margin: 0 5px;
+        width: 0;
+        transition: $slowIn;
+      }
+    }
+    div:nth-child(1) {
+      &:hover {
+        background-color: #c13584;
+        transition: $slowOut;
+        padding: 0 10px;
+        p {
+          width: 350px;
+          font-size: $fontM;
+          transition: $slowIn;
+        }
+      }
+    }
+    div:nth-child(2) {
+      &:hover {
+        background-color: #3b5998;
+        transition: $slowOut;
+        padding: 0 10px;
+        p {
+          width: 350px;
+          font-size: $fontM;
+          transition: $slowIn;
+        }
+      }
+    }
+    div:nth-child(3) {
+      &:hover {
+        background-color: #db4437;
+        transition: $slowOut;
+        padding: 0 10px;
+        p {
+          width: 350px;
+          font-size: $fontM;
+          transition: $slowIn;
+        }
+      }
+    }
+    div:nth-child(4) {
+      &:hover {
+        background-color: #25d366;
+        transition: $slowOut;
+        padding: 0 10px;
+        p {
+          width: 350px;
+          font-size: $fontM;
+          transition: $slowIn;
+        }
+      }
+    }
+    div:nth-child(5) {
+      &:hover {
+        background-color: #0088cc;
+        transition: $slowOut;
+        padding: 0 10px;
+        p {
+          width: 350px;
+          font-size: $fontM;
+          transition: $slowIn;
+        }
+      }
+    }
+  }
+
+  .bottomProfile {
+    overflow: auto;
+    padding: 20px;
+    div {
+      margin: 10px 0;
+
+      h4 {
+        color: $orange;
+        font-size: $fontMS;
+        font-weight: 500;
+        margin-bottom: 3px;
+      }
+      p {
+        color: $white;
+        font-size: $fontS;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
 .announcement {
-  @include widgetCard(35%, column, transparent);
+  @include widgetCard(70%, 250px, column, transparent);
   padding: 20px;
 
   .announRow {
@@ -162,7 +330,7 @@
 }
 
 .calendar {
-  @include widgetCard(15%, column, transparent);
+  @include widgetCard(26.5%, 250px, column, transparent);
 
   .clock {
     width: 100%;
@@ -212,7 +380,7 @@
 }
 
 .todoList {
-  @include widgetCard(50%, column, transparent);
+  @include widgetCard(100%, 270px, column, transparent);
 
   form {
     @include smallForm();
@@ -223,8 +391,57 @@
   }
 }
 
+.todoListUser {
+  @include widgetCard(100%, 270px, column, transparent);
+
+  h2 {
+    font-size: $fontL;
+    text-align: center;
+    color: $orange;
+    margin: 10px 0;
+  }
+
+  div {
+    @include smallTable();
+  }
+}
+
+.widgetStatistics {
+  @include widgetCard(100%, 100%, column, transparent);
+  padding: 10px;
+
+  div {
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      span {
+        background-color: $orange;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        margin-left: 5px;
+        border-radius: 100%;
+        font-size: $fontL;
+      }
+      h1 {
+        font-size: $fontLM;
+        color: $white;
+        margin-left: 5px;
+        margin-top: 10px;
+        font-weight: 500;
+      }
+    }
+    p {
+      font-size: $fontS;
+      color: $orangeWhite;
+      text-align: right;
+    }
+  }
+}
+
 .tahunAjaran {
-  @include widgetCard(27%, column, transparent);
+  @include widgetCard(27%, 250px, column, transparent);
 
   form {
     @include smallForm();
@@ -236,7 +453,7 @@
 }
 
 .kelas {
-  @include widgetCard(38%, column, transparent);
+  @include widgetCard(38%, 250px, column, transparent);
 
   form {
     @include smallForm();
@@ -248,7 +465,7 @@
 }
 
 .mataPelajaran {
-  @include widgetCard(30%, column, transparent);
+  @include widgetCard(30%, 250px, column, transparent);
 
   form {
     @include smallForm();
@@ -260,7 +477,7 @@
 }
 
 .dataAnggaran {
-  @include widgetCard(60%, column, transparent);
+  @include widgetCard(60%, 250px, column, transparent);
 
   form {
     @include smallForm();
@@ -272,7 +489,7 @@
 }
 
 .dataInfo {
-  @include widgetCard(37%, column, transparent);
+  @include widgetCard(37%, 250px, column, transparent);
 
   form {
     @include smallForm();

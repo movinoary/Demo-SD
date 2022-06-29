@@ -39,7 +39,6 @@
     height: 100%;
     margin-bottom: 3%;
     display: flex;
-    flex-direction: row;
     align-items: center;
 
     .desc {
@@ -48,6 +47,9 @@
       font-size: $fontM;
       text-align: justify;
       padding: 30px;
+      p {
+        margin-top: 10px;
+      }
     }
 
     .image {
@@ -55,6 +57,7 @@
       flex-direction: row;
       align-items: center;
       width: 100%;
+      height: 60vh;
 
       div:nth-child(1) {
         @include hoverImgScale();
@@ -147,6 +150,15 @@
   }
 }
 
+.gridAnggaran {
+  @include layout();
+  height: 30rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
 .news {
   @include layout();
 
@@ -172,7 +184,7 @@
 
     img {
       width: 100%;
-      height: 100;
+      height: 100%;
     }
     .data {
       width: 30%;
@@ -214,8 +226,22 @@
     margin-bottom: 2rem;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(490px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 1rem;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1230px) {
+  .video {
+    @include layout();
+
+    .row {
+      margin-bottom: 2rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 1rem;
+    }
   }
 }
 
@@ -223,10 +249,109 @@
   .gridProfile {
     padding: 11% 2% 3% 2%;
   }
+  .principal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .desc {
+      width: 100%;
+      margin: 0;
+      font-size: $fontM;
+      text-align: justify;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      p {
+        margin: 0;
+        margin: 0;
+      }
+    }
+
+    .image {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .video {
+    .row {
+      margin-bottom: 1rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+  }
 }
 
 @media only screen and (min-width: 0px) and (max-width: 576px) {
   .gridProfile {
     padding: 20% 2% 3% 2%;
+  }
+
+  .video {
+    .row {
+      margin-bottom: 1rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+  }
+
+  .detailBerita {
+    .header {
+      display: flex;
+      flex-direction: column;
+      .data {
+        width: 100%;
+        padding: 0;
+        .desc {
+          display: flex;
+          flex-direction: column;
+          margin: 0.5rem;
+          text-align: center;
+
+          h3 {
+            font-size: $fontLM;
+            color: $blueDark;
+            text-transform: capitalize;
+          }
+
+          p {
+            text-transform: capitalize;
+            font-size: $fontM;
+          }
+        }
+      }
+    }
+  }
+
+  .principal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .desc {
+      width: 100%;
+      margin-right: 0;
+      font-size: $fontM;
+      text-align: justify;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      p {
+        margin-top: 0;
+      }
+    }
   }
 }

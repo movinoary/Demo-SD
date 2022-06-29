@@ -12,7 +12,7 @@ const BankSoalAgama = () => {
           <div>
             <h2>Kelas</h2>
             <select>
-              <option hidden>Class | Teacher</option>
+              <option hidden>Kelas | Guru</option>
               <option>Kelas 1A | Irene </option>
               <option>Kelas 1B | Sana </option>
               <option>Kelas 2A | Lia </option>

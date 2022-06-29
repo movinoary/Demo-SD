@@ -47,6 +47,12 @@
           color: $white;
           margin: 0 10px;
           font-weight: 800;
+          transition: $slowOut;
+
+          &:hover {
+            color: $orange;
+            transition: $slowIn;
+          }
         }
 
         h2 {
@@ -319,8 +325,8 @@
         transition: all 0.5s ease-out;
       }
       h2 {
-        margin-top: 7px;
         color: $orangeBlack;
+        font-size: 0;
         transition: all 0.5s ease;
       }
       p {
@@ -489,11 +495,21 @@
     gap: 2rem;
     flex-direction: row;
 
-    .top {
+    .topLeft {
       display: flex;
+      flex-wrap: wrap;
       flex-direction: row;
       gap: 2rem;
-      width: 100%;
+      width: 70%;
+    }
+
+    .gridCenter {
+      background-color: transparent;
+      width: 47%;
+      height: 35rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
     }
   }
 }
@@ -920,6 +936,140 @@
     }
 
     td:nth-child(6) {
+      @include buttonTable();
+    }
+  }
+
+  .ulanganHarianBottom {
+    width: 100%;
+    table {
+      @include table();
+    }
+    th:nth-child(1) {
+      width: 5%;
+    }
+    th:nth-child(2) {
+      width: 20%;
+    }
+    th:nth-child(3) {
+      width: 5%;
+    }
+    th:nth-child(4) {
+      width: 5%;
+    }
+    th:nth-child(5) {
+      width: 5%;
+    }
+    th:nth-child(6) {
+      width: 5%;
+    }
+    th:nth-child(7) {
+      width: 5%;
+    }
+    th:nth-child(8) {
+      width: 5%;
+    }
+    th:nth-child(9) {
+      width: 5%;
+    }
+    th:nth-child(10) {
+      width: 5%;
+    }
+    th:nth-child(11) {
+      width: 10%;
+    }
+
+    td {
+      padding: 5px;
+    }
+    td:nth-child(11) {
+      @include buttonTable();
+    }
+  }
+
+  .pekanUlanganBottom {
+    width: 100%;
+    table {
+      @include table();
+    }
+    th:nth-child(1) {
+      width: 5%;
+    }
+    th:nth-child(2) {
+      width: 35%;
+    }
+    th:nth-child(3) {
+      width: 10%;
+    }
+    th:nth-child(4) {
+      width: 10%;
+    }
+    th:nth-child(5) {
+      width: 10%;
+    }
+    th:nth-child(6) {
+      width: 10%;
+    }
+    th:nth-child(7) {
+      width: 20%;
+    }
+    td {
+      padding: 5px;
+    }
+    td:nth-child(7) {
+      @include buttonTable();
+    }
+  }
+
+  .tengahSemesterBottom {
+    width: 100%;
+    table {
+      @include table();
+    }
+    th:nth-child(1) {
+      width: 10%;
+    }
+    th:nth-child(2) {
+      width: 35%;
+    }
+    th:nth-child(3) {
+      width: 15%;
+    }
+    th:nth-child(4) {
+      width: 15%;
+    }
+    th:nth-child(5) {
+      width: 25%;
+    }
+    td {
+      padding: 5px;
+    }
+    td:nth-child(5) {
+      @include buttonTable();
+    }
+  }
+
+  .ulanganAkhirBottom {
+    width: 100%;
+    table {
+      @include table();
+    }
+    th:nth-child(1) {
+      width: 15%;
+    }
+    th:nth-child(2) {
+      width: 35%;
+    }
+    th:nth-child(3) {
+      width: 25%;
+    }
+    th:nth-child(4) {
+      width: 25%;
+    }
+    td {
+      padding: 5px;
+    }
+    td:nth-child(4) {
       @include buttonTable();
     }
   }

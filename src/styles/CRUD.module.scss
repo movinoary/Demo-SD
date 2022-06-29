@@ -1,0 +1,100 @@
+@import "./Variable.scss";
+
+.modalDelete {
+  top: 50px;
+  left: 7%;
+  width: 90%;
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modalRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    height: 220px;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: $white;
+
+    div:nth-child(1) {
+      h2 {
+        font-size: $fontL;
+      }
+      p {
+        font-size: $fontM;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+    }
+
+    div:nth-child(2) {
+      width: 100%;
+      border-top: 1px solid $black;
+      padding-top: 12px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+
+      button:nth-child(1) {
+        margin-right: 10px;
+        width: 100px;
+        @include buttonStandart(
+          $green,
+          $white,
+          $green,
+          $greenLight,
+          $white,
+          $greenLight,
+          $green,
+          $white,
+          $green
+        );
+      }
+      button:nth-child(2) {
+        margin-left: 10px;
+        width: 100px;
+        @include buttonStandart(
+          $red,
+          $white,
+          $red,
+          $redLight,
+          $white,
+          $redLight,
+          $red,
+          $white,
+          $red
+        );
+      }
+    }
+  }
+}
+
+.editModal {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+
+  .editAnnouncement {
+    @include editModal(420px, 370px);
+  }
+
+  .editTodo {
+    @include editModal(420px, 320px);
+  }
+
+  .editProfile {
+    @include editModal(800px, 600px);
+  }
+}

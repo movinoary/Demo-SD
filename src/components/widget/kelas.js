@@ -30,16 +30,16 @@ const WidgetKelas = () => {
           <thead>
             <tr>
               <th>No</th>
-              <th>Judul</th>
-              <th>Jumlah</th>
+              <th>Tahun Ajaran</th>
+              <th>Kelas</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>Siswa</td>
-              <td>100</td>
+              <td>2021 / 2022</td>
+              <td>Kelas 1A</td>
               <td>
                 <button>
                   <AiIcons.AiFillEdit />

@@ -1,12 +1,9 @@
 import React, { useCallback, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 import * as Assets from "../../assets/index";
-import * as AiIcons from "react-icons/ai";
 import * as cssModule from "../../styles/index";
 
-const ModalLogin = ({ showModal, setShowModal }) => {
-  const navigate = useNavigate();
+const ModalDelete = ({ showModal, setShowModal }) => {
   const modalRef = useRef();
 
   const closeModal = e => {
@@ -33,7 +30,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
     <>
       {showModal ? (
         <motion.div
-          className={cssModule.Components.modalLogin}
+          className={cssModule.CRUD.modalDelete}
           onClick={closeModal}
           ref={modalRef}
           initial="out"
@@ -43,32 +40,20 @@ const ModalLogin = ({ showModal, setShowModal }) => {
           transition={Assets.transition}
         >
           <motion.div
-            className={cssModule.Components.modalRow}
+            className={cssModule.CRUD.modalRow}
             initial="out"
             animate="in"
             exit="out"
             variants={Assets.animationTop}
             transition={Assets.transition}
           >
-            <div className={cssModule.Components.background}>
-              <div>
-                <AiIcons.AiOutlineClose
-                  className={cssModule.Components.close}
-                  onClick={() => navigate("/admin-dashboard")}
-                />
-                <h1>Login</h1>
-                <form>
-                  <label>e-mail</label>
-                  <input type="email" placeholder="school@mail.com" />
-                  <label>password</label>
-                  <input type="password" placeholder="********" />
-                  <button>login</button>
-                </form>
-                <button onClick={() => navigate("user-dashboard")}>user</button>
-                <button onClick={() => navigate("admin-dashboard")}>
-                  admin
-                </button>
-              </div>
+            <div>
+              <h2>Delete</h2>
+              <p>Apakah anda yakin ingin Menghapus Data?</p>
+            </div>
+            <div>
+              <button>yes</button>
+              <button onClick={() => setShowModal(false)}>no</button>
             </div>
           </motion.div>
         </motion.div>
@@ -77,6 +62,4 @@ const ModalLogin = ({ showModal, setShowModal }) => {
   );
 };
 
-export default ModalLogin;
-
-//() => setShowModal(prev => !prev)
+export default ModalDelete;

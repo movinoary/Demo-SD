@@ -11,11 +11,14 @@ import Video from "./video";
 // Dashboard
 import AdminDashboard from "./dashboard/adminDashboard";
 import UserDashboard from "./dashboard/userDashboard";
-import BlankPageDashboard from "./dashboard/blankPageDashboard";
-import ProfileDashboard from "./dashboard/profile";
+import {
+  BlankPageDashboardUser,
+  BlankPageDashboardAdmin,
+} from "./dashboard/blankPageDashboard";
 
 // Database
 import DatabaseBerita from "./dashboard/databaseBerita";
+import DatabaseBeritaBeranda from "./dashboard/databaseBeritaBeranda";
 import DatabaseBeritaSekolah from "./dashboard/databaseBeritaSekolah";
 import DatabasePengumumanSekolah from "./dashboard/databasePengumumanSekolah";
 import DatabaseGaleri from "./dashboard/databaseGaleri";
@@ -38,6 +41,11 @@ import DataSiswaKelas1 from "./dashboard/dataSiswaKelas1";
 
 // Daftar Nilai
 import DaftarNilai from "./dashboard/daftarNilai";
+import DaftarNilaiUlanganHarian from "./dashboard/daftarNilaiUlanganHarian";
+import DaftarNilaiPekanUlangan from "./dashboard/daftarNilaiPekanUlangan";
+import DaftarNilaiTengahSemester from "./dashboard/daftarNilaiPenilaianTengahSemester";
+import DaftarNilaiAkhirSemester from "./dashboard/daftarNilaiPenilaianAkhirSemester";
+import DaftarNilaiAkhirTahun from "./dashboard/daftarNilaiAkhirTahun";
 
 export {
   Home,
@@ -51,10 +59,11 @@ export {
   // Dashboard
   AdminDashboard,
   UserDashboard,
-  BlankPageDashboard,
-  ProfileDashboard,
+  BlankPageDashboardUser,
+  BlankPageDashboardAdmin,
   // Database
   DatabaseBerita,
+  DatabaseBeritaBeranda,
   DatabaseBeritaSekolah,
   DatabasePengumumanSekolah,
   DatabaseGaleri,
@@ -73,4 +82,9 @@ export {
   DataSiswaKelas1,
   // Daftar Nilai
   DaftarNilai,
+  DaftarNilaiUlanganHarian,
+  DaftarNilaiPekanUlangan,
+  DaftarNilaiTengahSemester,
+  DaftarNilaiAkhirSemester,
+  DaftarNilaiAkhirTahun,
 };

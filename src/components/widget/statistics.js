@@ -1,7 +1,7 @@
 import ReactApexChart from "react-apexcharts";
 import * as cssModule from "../../styles/index";
 
-function CardStatistics({ title, icon, value, percen }) {
+function WidgetStatistics({ title, icon, value, percen }) {
   const series = [
     {
       name: title,
@@ -11,7 +11,7 @@ function CardStatistics({ title, icon, value, percen }) {
   const options = {
     chart: {
       type: "bar",
-      height: 70,
+      height: 10,
       stacked: true,
       sparkline: {
         enabled: true,
@@ -20,28 +20,16 @@ function CardStatistics({ title, icon, value, percen }) {
     plotOptions: {
       bar: {
         horizontal: true,
-        barHeight: "30%",
+        barHeight: "20%",
         colors: {
-          backgroundBarColors: ["#22577e"],
+          backgroundBarColors: ["#3a3535"],
         },
       },
     },
     stroke: {
       width: 0,
     },
-    colors: ["#95d1cc"],
-    fill: {
-      opacity: 1,
-    },
-    subtitle: {
-      floating: true,
-      align: "right",
-      offsetY: 0,
-      text: percen,
-      style: {
-        fontSize: "20px",
-      },
-    },
+    colors: ["#e45826"],
     tooltip: {
       enabled: false,
     },
@@ -56,20 +44,23 @@ function CardStatistics({ title, icon, value, percen }) {
     },
   };
   return (
-    <div className={cssModule.Components.cardStatistics}>
+    <div className={cssModule.Widget.widgetStatistics}>
       <div>
-        <p>{icon}</p>
-        <h1>{title}</h1>
+        <div>
+          <span>{icon}</span>
+          <h1>{title}</h1>
+        </div>
+        <p>{percen}</p>
       </div>
       <ReactApexChart
         options={options}
         series={series}
         type="bar"
-        height={80}
+        height={70}
         width="100%"
       />
     </div>
   );
 }
 
-export default CardStatistics;
+export default WidgetStatistics;

@@ -18,58 +18,58 @@ const WidgetCalendar = () => {
 
   switch (months) {
     case 0:
-      setMonths("January");
+      setMonths("Januari");
       break;
     case 1:
-      setMonths("February");
+      setMonths("Februari");
       break;
     case 2:
-      setMonths("March");
+      setMonths("Maret");
       break;
     case 3:
       setMonths("April");
       break;
     case 4:
-      setMonths("May");
+      setMonths("Mei");
       break;
     case 5:
-      setMonths("June");
+      setMonths("Juni");
       break;
     case 6:
-      setMonths("July");
+      setMonths("Juli");
       break;
     case 7:
-      setMonths("August");
+      setMonths("Agustus");
       break;
     case 8:
       setMonths("September");
       break;
     case 9:
-      setMonths("October");
+      setMonths("Oktober");
       break;
     case 10:
       setMonths("November");
       break;
     case 11:
-      setMonths("December");
+      setMonths("Desember");
       break;
   }
 
   switch (days) {
     case 0:
-      return setDays(() => "Sunday");
+      return setDays(() => "Senin");
     case 1:
-      return setDays(() => "Monday");
+      return setDays(() => "Selasa");
     case 2:
-      return setDays(() => "Tuesday");
+      return setDays(() => "Rabu");
     case 3:
-      return setDays(() => "Wesnesday");
+      return setDays(() => "Kamis");
     case 4:
-      return setDays(() => "Thuesday");
+      return setDays(() => "Jumat");
     case 5:
-      return setDays(() => "Friday");
+      return setDays(() => "Sabtu");
     case 6:
-      return setDays(() => "Saturday");
+      return setDays(() => "Minggu");
   }
 
   return (

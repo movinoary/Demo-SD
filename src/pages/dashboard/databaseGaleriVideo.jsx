@@ -11,9 +11,7 @@ const DatabaseVideo = () => {
         <h1>
           Video <span>Youtube</span>
         </h1>
-        <button>
-          <FaIcons.FaPlusSquare />
-        </button>
+        <button>Tambah</button>
       </div>
       <div>
         <table className={cssModule.Dashboard.databaseTableVideo}>

@@ -10,12 +10,12 @@ const DatabaseBerita = () => {
   return (
     <>
       <section className={cssModule.Widget.cardLink}>
-        <Link to="umum" className={cssModule.Widget.link}>
+        <Link to="beranda" className={cssModule.Widget.link}>
           <p>
             <GiIcons.GiNewspaper />
           </p>
           <h2>
-            Berita <span>Home</span>
+            Berita <span>Beranda</span>
           </h2>
         </Link>
         <Link to="sekolah" className={cssModule.Widget.link}>
@@ -44,6 +44,7 @@ const DatabaseBerita = () => {
         </Link>
       </section>
       <Routes>
+        <Route path="beranda" element={<Page.DatabaseBeritaBeranda />} />
         <Route path="sekolah" element={<Page.DatabaseBeritaSekolah />} />
         <Route path="pengumuman" element={<Page.DatabasePengumumanSekolah />} />
         <Route path="view/*" element={<Page.Berita />} />

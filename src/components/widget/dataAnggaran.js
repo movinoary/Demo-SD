@@ -31,8 +31,9 @@ const WidgetDataAnggaran = () => {
             <tr>
               <th>No</th>
               <th>Judul</th>
-              <th>Jumlah</th>
               <th>Icon</th>
+              <th>Jumlah</th>
+              <th>persen</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -40,8 +41,9 @@ const WidgetDataAnggaran = () => {
             <tr>
               <td>1</td>
               <td>Siswa</td>
+              <td>Icon</td>
               <td>100</td>
-              <td>100</td>
+              <td>50%</td>
               <td>
                 <button>
                   <AiIcons.AiFillEdit />

@@ -11,9 +11,7 @@ const DatabaseGaleriFasilitas = () => {
         <h1>
           Galeri <span>Fasilitas</span>
         </h1>
-        <button>
-          <FaIcons.FaPlusSquare />
-        </button>
+        <button>Tambah</button>
       </div>
       <div>
         <table className={cssModule.Dashboard.databaseTableGaleri}>

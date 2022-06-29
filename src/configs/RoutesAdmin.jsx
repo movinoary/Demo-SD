@@ -65,7 +65,7 @@ const RoutesAdmin = () => {
                 />
               </div>
             )}
-            <button onClick={LogoutModal}>logout</button>
+            <button onClick={LogoutModal}>Keluar</button>
           </div>
         </header>
         <section className={cssModule.Dashboard.sectionDashboard}>
@@ -82,7 +82,6 @@ const RoutesAdmin = () => {
                 alt="profile"
               />
               <h2>Irene</h2>
-              <p>Irene@mail.com</p>
             </div>
             <div>
               {Components.DataNavDashboard.map((item, index) => {
@@ -93,8 +92,11 @@ const RoutesAdmin = () => {
           <div className={cssModule.Dashboard.routeDashboard}>
             <Routes>
               <Route exact path="/" element={<Page.AdminDashboard />} />
-              <Route exact path="*" element={<Page.BlankPageDashboard />} />
-              <Route exact path="profile" element={<Page.ProfileDashboard />} />
+              <Route
+                exact
+                path="*"
+                element={<Page.BlankPageDashboardAdmin />}
+              />
               {/* Database */}
               <Route
                 exact
@@ -147,7 +149,7 @@ const RoutesAdmin = () => {
               {/* Daftar Nilai */}
               <Route
                 exact
-                path="daftar-nilai/"
+                path="daftar-nilai/*"
                 element={<Page.DaftarNilai />}
               />
             </Routes>
