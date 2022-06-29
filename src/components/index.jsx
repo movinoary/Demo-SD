@@ -31,6 +31,11 @@ import WidgetUser from "./widget/user";
 import { WidgetTodoListAdmin, WidgetTodoListUser } from "./widget/todoList";
 import WidgetLink from "./widget/link";
 import WidgetInformation from "./widget/information";
+import { WidgetMataPelajaran } from "./widget/mataPelajaran";
+import { WidgetDataAnggaran } from "./widget/dataAnggaran";
+import { WidgetDataInfo } from "./widget/dataInfo";
+import { WidgetTahunAjaran } from "./widget/tahunAjaran";
+import { WidgetKelas } from "./widget/kelas";
 
 export {
   //Other
@@ -62,4 +67,9 @@ export {
   WidgetTodoListUser,
   WidgetLink,
   WidgetInformation,
+  WidgetMataPelajaran,
+  WidgetDataAnggaran,
+  WidgetDataInfo,
+  WidgetTahunAjaran,
+  WidgetKelas,
 };

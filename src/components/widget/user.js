@@ -22,9 +22,9 @@ const WidgetUser = () => {
           <div className={cssModule.Widget.userInfo}>
             <p>Admin : No Lock Everthing </p>
             <h3>|</h3>
-            <p>SuUser : Edit Data Unlock, Dashboard Lock</p>
+            <p>SubAdmin : Edit Data Unlock, Dashboard Lock</p>
             <h3>|</h3>
-            <p>User : Just Add Data</p>
+            <p>Teacher : Just Add Data</p>
             <h3>|</h3>
             <p>Reporter : Just Add Edit Dashboard News </p>
           </div>
@@ -36,12 +36,6 @@ const WidgetUser = () => {
             <tr>
               <th>No</th>
               <th>akun</th>
-              <th>NIP</th>
-              <th>Kelamin</th>
-              <th>Jabatan</th>
-              <th>Status</th>
-              <th>telepon</th>
-              <th>alamat</th>
               <th>
                 role <button onClick={handleClick}>i</button>
               </th>
@@ -63,12 +57,6 @@ const WidgetUser = () => {
                   </div>
                 </section>
               </td>
-              <td>1231293-021312</td>
-              <td>P</td>
-              <td>Guru Kelas 1</td>
-              <td>PNS</td>
-              <td>085156611224</td>
-              <td>JL.Palem Kartika No.29</td>
               <td>Admin</td>
               <td>
                 <button>

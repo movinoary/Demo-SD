@@ -5,7 +5,7 @@ import * as cssModule from "../../styles/index";
 const WidgetTodoListAdmin = () => {
   return (
     <div className={cssModule.Widget.todoList}>
-      <form className={cssModule.Widget.todoForm}>
+      <form>
         <h2>Todo List</h2>
         <div>
           <input type="text" id="todo" placeholder="todoList" />
@@ -21,7 +21,7 @@ const WidgetTodoListAdmin = () => {
           </p>
         </button>
       </form>
-      <div className={cssModule.Widget.todotable}>
+      <div>
         <table>
           <thead>
             <tr>
@@ -81,10 +81,10 @@ const WidgetTodoListAdmin = () => {
 const WidgetTodoListUser = () => {
   return (
     <div className={cssModule.Widget.todoList}>
-      <div className={cssModule.Widget.todoForm}>
+      <div>
         <h2>Todo List</h2>
       </div>
-      <div className={cssModule.Widget.todotable}>
+      <div>
         <table>
           <thead>
             <tr>

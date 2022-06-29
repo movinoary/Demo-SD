@@ -1,5 +1,6 @@
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
+import * as HiIcons from "react-icons/hi";
 import * as RiIcons from "react-icons/ri";
 import * as ImIcons from "react-icons/im";
 
@@ -19,127 +20,115 @@ export const DataNavDashboard = [
     iconOpened: <RiIcons.RiArrowUpSFill />,
   },
   {
-    title: "View Home",
-    path: "view-home",
-    icon: <FaIcons.FaHome />,
-    iconClosed: <RiIcons.RiArrowDownSFill />,
-    iconOpened: <RiIcons.RiArrowUpSFill />,
-  },
-  {
     title: "Database",
-    icon: <AiIcons.AiFillDatabase />,
+    icon: <FaIcons.FaServer />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
-        title: "Anggaran",
-        path: "database/anggaran",
-        icon: <FaIcons.FaDatabase />,
-      },
-      {
         title: "Berita",
         path: "database/berita",
-        icon: <FaIcons.FaDatabase />,
+        icon: <HiIcons.HiServer />,
       },
       {
         title: "Galeri",
         path: "database/galeri",
-        icon: <FaIcons.FaDatabase />,
+        icon: <HiIcons.HiServer />,
       },
       {
-        title: "Informasi",
-        path: "database/informasi",
-        icon: <FaIcons.FaDatabase />,
+        title: "Sekolah",
+        path: "database/sekolah",
+        icon: <HiIcons.HiServer />,
       },
     ],
   },
   {
     title: "Perangkat Pembelajaran",
-    icon: <RiIcons.RiComputerFill />,
+    icon: <FaIcons.FaSwatchbook />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
         title: "Silabus",
-        path: "/dashboard/silabus",
-        icon: <FaIcons.FaClipboardList />,
+        path: "perangkat-pembelajaran/silabus",
+        icon: <FaIcons.FaBook />,
       },
       {
         title: "RPP",
-        path: "/dashboard/rpp",
-        icon: <FaIcons.FaClipboardList />,
+        path: "perangkat-pembelajaran/rpp",
+        icon: <FaIcons.FaBook />,
       },
       {
         title: "KKM",
-        path: "/dashboard/kkm",
-        icon: <FaIcons.FaClipboardList />,
+        path: "perangkat-pembelajaran/kkm",
+        icon: <FaIcons.FaBook />,
       },
       {
         title: "Prota",
-        path: "/dashboard/prota",
-        icon: <FaIcons.FaClipboardList />,
+        path: "perangkat-pembelajaran/prota",
+        icon: <FaIcons.FaBook />,
       },
       {
         title: "Promes",
-        path: "/dashboard/promes",
-        icon: <FaIcons.FaClipboardList />,
+        path: "perangkat-pembelajaran/promes",
+        icon: <FaIcons.FaBook />,
       },
     ],
   },
   {
     title: "Bank Soal",
-    icon: <AiIcons.AiFillDatabase />,
+    icon: <RiIcons.RiClipboardFill />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
         title: "Pendidikan Agama",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "bank-soal/pendidikan-agama",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "PKN",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "bank-soal/pkn",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "Bahasa Indonesia",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "bank-soal/bahasa-indonesia",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "Matematika",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "bank-soal/matemaatika",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "IPA",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "bank-soal/ipa",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "IPS",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "bank-soal/ips",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "PJOK",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "bank-soal/pjok",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "SBdP",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "bank-soal/sbdp",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "Bahasa Inggris",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "bank-soal/bahasa-inggris",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "Bahasa Sunda",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "bank-soal/bahasa-sunda",
         icon: <FaIcons.FaClipboardList />,
       },
     ],
@@ -152,67 +141,41 @@ export const DataNavDashboard = [
     subNav: [
       {
         title: "Kelas 1",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "data-siswa-kelas-1",
         icon: <RiIcons.RiNumber1 />,
       },
       {
         title: "Kelas 2",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "data-siswa-kelas-2",
         icon: <RiIcons.RiNumber2 />,
       },
       {
         title: "Kelas 3",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "data-siswa-kelas-3",
         icon: <RiIcons.RiNumber3 />,
       },
       {
         title: "Kelas 4",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "data-siswa-kelas-4",
         icon: <RiIcons.RiNumber4 />,
       },
       {
         title: "Kelas 5",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "data-siswa-kelas-5",
         icon: <RiIcons.RiNumber5 />,
       },
       {
         title: "Kelas 6",
-        path: "/dashboard/bank-soal-pendidikan-agama",
+        path: "data-siswa-kelas-6",
         icon: <RiIcons.RiNumber6 />,
       },
     ],
   },
   {
     title: "DaftarNiai",
+    path: "daftar-nilai",
     icon: <ImIcons.ImBooks />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
-    subNav: [
-      {
-        title: "Ulangan Harian",
-        path: "/dashboard/ulangan-harian",
-        icon: <RiIcons.RiBook3Fill />,
-      },
-      {
-        title: "Pekan Ulangan",
-        path: "/dashboard/pekan-ulangan",
-        icon: <RiIcons.RiBook3Fill />,
-      },
-      {
-        title: "Penilaian tengah Semester",
-        path: "/dashboard/penilaian-tengah-semester",
-        icon: <RiIcons.RiBook3Fill />,
-      },
-      {
-        title: "Penilaian Akhir Semester",
-        path: "/dashboard/penilaian-akhir-semester",
-        icon: <RiIcons.RiBook3Fill />,
-      },
-      {
-        title: "Penilaian Akhir Tahun",
-        path: "/dashboard/penilaian-akhir-tahun",
-        icon: <RiIcons.RiBook3Fill />,
-      },
-    ],
   },
 ];

@@ -7,14 +7,6 @@ import * as cssModule from "../../styles/index";
 const WidgetLink = () => {
   return (
     <section className={cssModule.Widget.cardLink}>
-      <Link to="database/anggaran" className={cssModule.Widget.link}>
-        <p>
-          <FaIcons.FaMoneyCheckAlt />
-        </p>
-        <h2>
-          Database <span>Anggaran</span>
-        </h2>
-      </Link>
       <Link to="database/berita" className={cssModule.Widget.link}>
         <p>
           <FaIcons.FaNewspaper />
@@ -23,12 +15,12 @@ const WidgetLink = () => {
           Database <span>Berita</span>
         </h2>
       </Link>
-      <Link to="database/data-sekolah" className={cssModule.Widget.link}>
+      <Link to="database/sekolah" className={cssModule.Widget.link}>
         <p>
           <FaIcons.FaSchool />
         </p>
         <h2>
-          Database <span>Informasi</span>
+          Database <span>Sekolah</span>
         </h2>
       </Link>
       <Link to="database/galeri" className={cssModule.Widget.link}>

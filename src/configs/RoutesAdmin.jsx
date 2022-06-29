@@ -76,14 +76,14 @@ const RoutesAdmin = () => {
                 : cssModule.Dashboard.footerDashboard
             }
           >
-            <Link to="profile" className={cssModule.Dashboard.profile}>
+            <div className={cssModule.Dashboard.profile}>
               <img
                 src="https://i.pinimg.com/736x/f8/f0/a2/f8f0a252e3ebe2d13dad1373001160eb.jpg"
                 alt="profile"
               />
               <h2>Irene</h2>
               <p>Irene@mail.com</p>
-            </Link>
+            </div>
             <div>
               {Components.DataNavDashboard.map((item, index) => {
                 return <Components.SubNav item={item} key={index} />;
@@ -93,12 +93,9 @@ const RoutesAdmin = () => {
           <div className={cssModule.Dashboard.routeDashboard}>
             <Routes>
               <Route exact path="/" element={<Page.AdminDashboard />} />
+              <Route exact path="*" element={<Page.BlankPageDashboard />} />
               <Route exact path="profile" element={<Page.ProfileDashboard />} />
-              <Route
-                exact
-                path="database/anggaran"
-                element={<Page.DatabaseAnggaran />}
-              />
+              {/* Database */}
               <Route
                 exact
                 path="database/berita/*"
@@ -111,10 +108,48 @@ const RoutesAdmin = () => {
               />
               <Route
                 exact
-                path="database/informasi"
-                element={<Page.DatabaseInformasi />}
+                path="database/Sekolah"
+                element={<Page.DatabaseSekolah />}
               />
-              <Route exact path="view-home" element={<Page.Home />} />
+              {/* Perangkat Pembelajaran */}
+              <Route
+                exact
+                path="perangkat-pembelajaran/silabus"
+                element={<Page.PembelajaranSilabus />}
+              />
+              <Route
+                exact
+                path="perangkat-pembelajaran/kkm"
+                element={<Page.PembelajaranKkm />}
+              />
+              <Route
+                exact
+                path="perangkat-pembelajaran/prota"
+                element={<Page.PembelajaranProta />}
+              />
+              <Route
+                exact
+                path="perangkat-pembelajaran/promes"
+                element={<Page.PembelajaranPromes />}
+              />
+              {/* Bank Soal */}
+              <Route
+                exact
+                path="bank-soal/pendidikan-agama"
+                element={<Page.BankSoalAgama />}
+              />
+              {/* Data Siswa */}
+              <Route
+                exact
+                path="data-siswa-kelas-1"
+                element={<Page.DataSiswaKelas1 />}
+              />
+              {/* Daftar Nilai */}
+              <Route
+                exact
+                path="daftar-nilai/"
+                element={<Page.DaftarNilai />}
+              />
             </Routes>
           </div>
         </section>

@@ -1,8 +1,8 @@
 @import "./Variable.scss";
 
 .userSection {
-  width: 100%;
-  height: 40rem;
+  width: 50%;
+  height: 30rem;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba($color: #000000, $alpha: 1);
@@ -18,7 +18,7 @@
 
     .userInfo {
       width: 100%;
-      height: 30px;
+      height: 60px;
       padding: 5px 20px;
       border-radius: 3px;
       text-align: right;
@@ -48,31 +48,14 @@
     .tableProfile {
       @include table();
       th:nth-child(1) {
-        width: 4%;
+        width: 10%;
       }
       th:nth-child(2) {
-        width: 18%;
+        width: 50%;
       }
+
       th:nth-child(3) {
-        width: 10%;
-      }
-      th:nth-child(4) {
-        width: 5%;
-      }
-      th:nth-child(5) {
-        width: 10%;
-      }
-      th:nth-child(6) {
-        width: 5%;
-      }
-      th:nth-child(7) {
-        width: 10%;
-      }
-      th:nth-child(8) {
-        width: 18%;
-      }
-      th:nth-child(9) {
-        width: 10%;
+        width: 20%;
         button {
           color: $orange;
           background-color: transparent;
@@ -85,8 +68,8 @@
           border-radius: 100px;
         }
       }
-      th:nth-child(10) {
-        width: 10%;
+      th:nth-child(3) {
+        width: 20%;
       }
       td:nth-child(2) {
         section {
@@ -110,7 +93,7 @@
         }
       }
 
-      td:nth-child(10) {
+      td:nth-child(4) {
         @include buttonTable();
       }
     }
@@ -231,103 +214,72 @@
 .todoList {
   @include widgetCard(50%, column, transparent);
 
-  .todoForm {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-
-    h2 {
-      font-size: $fontLM;
-      color: $orange;
-    }
-    div {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-
-      label {
-        color: $orange;
-        font-size: $fontXS;
-        margin: 3px 0 0 5px;
-      }
-
-      input {
-        background-color: transparent;
-        color: $orangeWhite;
-        border: none;
-        border-bottom: 1px solid $orange;
-        font-size: $fontS;
-        padding: 3px 5px;
-
-        &::placeholder {
-          color: rgba($color: $orangeWhite, $alpha: 0.5);
-        }
-
-        &::-webkit-calendar-picker-indicator {
-          display: none;
-        }
-        &:focus {
-          outline: none;
-        }
-      }
-    }
-    button {
-      padding: 3px 5px;
-      text-align: center;
-      font-size: $fontLM;
-      text-align: center;
-      border: none;
-      transition: 0.3s all ease;
-      cursor: pointer;
-      height: 100%;
-      background-color: transparent;
-      color: $orange;
-      transition: $slowOut;
-      &:hover {
-        color: $orangeLight;
-        transition: $slowIn;
-      }
-    }
+  form {
+    @include smallForm();
   }
 
-  .todotable {
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    table {
-      @include table();
-      td {
-        button {
-          padding: 3px 5px;
-          text-align: center;
-          font-size: $fontM;
-          text-align: center;
-          border: none;
-          transition: 0.3s all ease;
-          cursor: pointer;
-          height: 100%;
-          background-color: transparent;
-          transition: $slowOut;
+  div {
+    @include smallTable();
+  }
+}
 
-          &:nth-child(1) {
-            color: $green;
-            &:hover {
-              color: $greenLight;
-              transition: $slowIn;
-            }
-          }
-          &:nth-child(2) {
-            color: $red;
-            &:hover {
-              color: $redLight;
-              transition: $slowIn;
-            }
-          }
-        }
-      }
-    }
+.tahunAjaran {
+  @include widgetCard(27%, column, transparent);
+
+  form {
+    @include smallForm();
+  }
+
+  div {
+    @include smallTable();
+  }
+}
+
+.kelas {
+  @include widgetCard(38%, column, transparent);
+
+  form {
+    @include smallForm();
+  }
+
+  div {
+    @include smallTable();
+  }
+}
+
+.mataPelajaran {
+  @include widgetCard(30%, column, transparent);
+
+  form {
+    @include smallForm();
+  }
+
+  div {
+    @include smallTable();
+  }
+}
+
+.dataAnggaran {
+  @include widgetCard(60%, column, transparent);
+
+  form {
+    @include smallForm();
+  }
+
+  div {
+    @include smallTable();
+  }
+}
+
+.dataInfo {
+  @include widgetCard(37%, column, transparent);
+
+  form {
+    @include smallForm();
+  }
+
+  div {
+    @include smallTable();
   }
 }
 
@@ -360,6 +312,7 @@
       margin-bottom: 5px;
     }
     h2 {
+      text-align: center;
       color: $orangeWhite;
       font-size: $fontLM;
       font-weight: 500;

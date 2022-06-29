@@ -13,15 +13,31 @@ import AdminDashboard from "./dashboard/adminDashboard";
 import UserDashboard from "./dashboard/userDashboard";
 import BlankPageDashboard from "./dashboard/blankPageDashboard";
 import ProfileDashboard from "./dashboard/profile";
-import DatabaseAnggaran from "./dashboard/databaseAnggaran";
+
+// Database
 import DatabaseBerita from "./dashboard/databaseBerita";
 import DatabaseBeritaSekolah from "./dashboard/databaseBeritaSekolah";
 import DatabasePengumumanSekolah from "./dashboard/databasePengumumanSekolah";
 import DatabaseGaleri from "./dashboard/databaseGaleri";
 import DatabaseGaleriFasilitas from "./dashboard/databaseGaleriFasilitas";
 import DatabaseGaleriKegiatan from "./dashboard/databaseGaleriKegiatan";
-import DatabaseInformasi from "./dashboard/databaseInformasi";
+import DatabaseSekolah from "./dashboard/databaseSekolah";
 import DatabaseVideo from "./dashboard/databaseGaleriVideo";
+
+// Pembelajaran
+import PembelajaranSilabus from "./dashboard/pembelajaranSilabus";
+import PembelajaranKkm from "./dashboard/pembelajaranKkm";
+import PembelajaranProta from "./dashboard/pembelajaranProta";
+import PembelajaranPromes from "./dashboard/pembelajaranPromes";
+
+// Bank Soal
+import BankSoalAgama from "./dashboard/bankSoalAgama";
+
+// Data Siswa
+import DataSiswaKelas1 from "./dashboard/dataSiswaKelas1";
+
+// Daftar Nilai
+import DaftarNilai from "./dashboard/daftarNilai";
 
 export {
   Home,
@@ -37,13 +53,24 @@ export {
   UserDashboard,
   BlankPageDashboard,
   ProfileDashboard,
-  DatabaseAnggaran,
+  // Database
   DatabaseBerita,
   DatabaseBeritaSekolah,
   DatabasePengumumanSekolah,
   DatabaseGaleri,
   DatabaseGaleriFasilitas,
   DatabaseGaleriKegiatan,
-  DatabaseInformasi,
+  DatabaseSekolah,
   DatabaseVideo,
+  // Pembelajaran
+  PembelajaranSilabus,
+  PembelajaranKkm,
+  PembelajaranProta,
+  PembelajaranPromes,
+  // Bank Soal
+  BankSoalAgama,
+  // Data Siswa
+  DataSiswaKelas1,
+  // Daftar Nilai
+  DaftarNilai,
 };

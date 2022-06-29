@@ -135,6 +135,19 @@ $slowOut: all ease-out 0.3s;
   }
 }
 
+@mixin selectDashboard {
+  background-color: $orangeBlack;
+  color: $white;
+  border: none;
+  border-bottom: 1px solid $orange;
+  font-size: $fontM;
+  padding: 7px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 @mixin hoverImgScale {
   &:hover > img {
     transition: 0.3s;
@@ -184,6 +197,114 @@ $slowOut: all ease-out 0.3s;
       &:last-of-type {
         border-bottom: 1px solid $orangeWhite;
       }
+    }
+  }
+}
+
+@mixin smallTable() {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  table {
+    @include table();
+    td {
+      button {
+        padding: 3px 5px;
+        text-align: center;
+        font-size: $fontM;
+        text-align: center;
+        border: none;
+        transition: 0.3s all ease;
+        cursor: pointer;
+        height: 100%;
+        background-color: transparent;
+        transition: $slowOut;
+
+        &:nth-child(1) {
+          color: $green;
+          &:hover {
+            color: $greenLight;
+            transition: $slowIn;
+          }
+        }
+        &:nth-child(2) {
+          color: $red;
+          &:hover {
+            color: $redLight;
+            transition: $slowIn;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin smallForm() {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+
+  h2 {
+    font-size: $fontLM;
+    width: 100%;
+    color: $orange;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    margin: 0 20px;
+
+    label {
+      color: $orange;
+      font-size: $fontXS;
+      margin: 3px 0 0 5px;
+    }
+
+    input,
+    select {
+      background-color: $orangeGray;
+      border-radius: 3px 3px 0 0;
+      color: $orangeWhite;
+      border: none;
+      border-bottom: 1px solid $orange;
+      font-size: $fontS;
+      padding: 3px 5px;
+
+      &::placeholder {
+        color: rgba($color: $orangeWhite, $alpha: 0.5);
+      }
+
+      &::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+      &:focus {
+        outline: none;
+      }
+      &::-webkit-file-upload-button {
+        display: none;
+      }
+    }
+  }
+
+  button {
+    padding: 3px 5px;
+    text-align: center;
+    font-size: $fontLM;
+    text-align: center;
+    border: none;
+    transition: 0.3s all ease;
+    cursor: pointer;
+    height: 100%;
+    background-color: transparent;
+    color: $orange;
+    transition: $slowOut;
+    &:hover {
+      color: $orangeLight;
+      transition: $slowIn;
     }
   }
 }
