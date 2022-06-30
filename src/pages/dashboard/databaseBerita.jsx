@@ -44,6 +44,7 @@ const DatabaseBerita = () => {
         </Link>
       </section>
       <Routes>
+        <Route path="/" element={<Page.BlankPageNoData />} />
         <Route path="beranda" element={<Page.DatabaseBeritaBeranda />} />
         <Route path="sekolah" element={<Page.DatabaseBeritaSekolah />} />
         <Route path="pengumuman" element={<Page.DatabasePengumumanSekolah />} />

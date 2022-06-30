@@ -14,6 +14,7 @@ import UserDashboard from "./dashboard/userDashboard";
 import {
   BlankPageDashboardUser,
   BlankPageDashboardAdmin,
+  BlankPageNoData,
 } from "./dashboard/blankPageDashboard";
 
 // Database
@@ -32,6 +33,9 @@ import PembelajaranSilabus from "./dashboard/pembelajaranSilabus";
 import PembelajaranKkm from "./dashboard/pembelajaranKkm";
 import PembelajaranProta from "./dashboard/pembelajaranProta";
 import PembelajaranPromes from "./dashboard/pembelajaranPromes";
+
+// Daftar Soal
+import DaftarSoalAgama from "./dashboard/daftarSoalAgama";
 
 // Bank Soal
 import BankSoalAgama from "./dashboard/bankSoalAgama";
@@ -61,6 +65,7 @@ export {
   UserDashboard,
   BlankPageDashboardUser,
   BlankPageDashboardAdmin,
+  BlankPageNoData,
   // Database
   DatabaseBerita,
   DatabaseBeritaBeranda,
@@ -76,6 +81,8 @@ export {
   PembelajaranKkm,
   PembelajaranProta,
   PembelajaranPromes,
+  // Soal
+  DaftarSoalAgama,
   // Bank Soal
   BankSoalAgama,
   // Data Siswa

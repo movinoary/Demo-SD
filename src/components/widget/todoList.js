@@ -6,6 +6,9 @@ import * as cssModule from "../../styles/index";
 const WidgetTodoListAdmin = () => {
   const [showModalDelete, setShowModalDelete] = useState(false);
   const [showModalTodo, setShowModalTodo] = useState(false);
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
 
   const DeleteModal = () => {
     setShowModalDelete(prev => !prev);
@@ -28,19 +31,34 @@ const WidgetTodoListAdmin = () => {
       <div className={cssModule.Widget.todoList}>
         <form>
           <h2>Acara / Event</h2>
-          <div>
-            <input type="text" id="todo" placeholder="todoList" />
-            <label htmlFor="todo">Acara</label>
-          </div>
-          <div>
-            <input type="date" id="date" />
-            <label htmlFor="date">Pelaksanaan</label>
-          </div>
-          <button>
-            <p>
-              <AiIcons.AiOutlinePlusSquare />
-            </p>
-          </button>
+          {click ? (
+            <>
+              <div>
+                <input type="text" id="todo" placeholder="todoList" />
+                <label htmlFor="todo">Acara</label>
+              </div>
+              <div>
+                <input type="date" id="date" />
+                <label htmlFor="date">Pelaksanaan</label>
+              </div>
+              <button>
+                <p>
+                  <AiIcons.AiOutlinePlusSquare />
+                </p>
+              </button>
+              <button onClick={handleClick}>
+                <p>
+                  <AiIcons.AiOutlineClose />
+                </p>
+              </button>
+            </>
+          ) : (
+            <button onClick={handleClick}>
+              <p>
+                <AiIcons.AiOutlinePlus />
+              </p>
+            </button>
+          )}
         </form>
         <div>
           <table>

@@ -1,25 +1,25 @@
 import React, { useRef } from "react";
-import * as cssModule from "../../styles/index";
+import * as cssModule from "../../../styles/index";
 
-const EditAnnouncement = ({ showModal, setShowModal }) => {
+const EditDataKelas = ({ showModal, setShowModal }) => {
   const modalRef = useRef();
 
   return (
     <>
       {showModal ? (
         <div className={cssModule.CRUD.editModal} ref={modalRef}>
-          <div className={cssModule.CRUD.editAnnouncement}>
+          <div className={cssModule.CRUD.editData}>
             <h1>
-              Edit <span>Penggumuman</span>
+              Edit <span>Kelas</span>
             </h1>
             <form>
               <div>
-                <label>Judul</label>
-                <input type="text" placeHolder="judul" />
+                <label>Tahun Ajaran</label>
+                <input type="text" placeHolder="Tahun Ajaran" />
               </div>
               <div>
-                <label>Pengumuman</label>
-                <textarea placeholder="Isi Pengumuman" rows="3" />
+                <label>Kelas</label>
+                <input type="text" placeHolder="Kelas" />
               </div>
               <section>
                 <button>Simpan</button>
@@ -33,4 +33,4 @@ const EditAnnouncement = ({ showModal, setShowModal }) => {
   );
 };
 
-export default EditAnnouncement;
+export default EditDataKelas;

@@ -350,6 +350,7 @@ $slowOut: all ease-out 0.3s;
 @mixin editModal($width, $height) {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: $width;
   height: $height;
   padding: 20px;
@@ -359,7 +360,18 @@ $slowOut: all ease-out 0.3s;
   h1 {
     color: $orange;
     font-size: $fontL;
+    span {
+      color: $orangeWhite;
+    }
   }
+
+  img {
+    margin-left: 120px;
+    margin-bottom: 1rem;
+    width: 100px;
+    height: 80px;
+  }
+
   form {
     display: flex;
     flex-direction: row;

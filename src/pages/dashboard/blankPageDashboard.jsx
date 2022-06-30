@@ -26,4 +26,15 @@ const BlankPageDashboardAdmin = () => {
   );
 };
 
-export { BlankPageDashboardUser, BlankPageDashboardAdmin };
+const BlankPageNoData = () => {
+  return (
+    <div className={cssModule.Dashboard.blankPage}>
+      <span>
+        <FcIcons.FcBriefcase />
+      </span>
+      <h1>Please Select Data</h1>
+    </div>
+  );
+};
+
+export { BlankPageDashboardUser, BlankPageDashboardAdmin, BlankPageNoData };

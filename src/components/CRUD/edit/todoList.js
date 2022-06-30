@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import * as cssModule from "../../styles/index";
+import * as cssModule from "../../../styles/index";
 
 const EditTodoList = ({ showModal, setShowModal }) => {
   const modalRef = useRef();

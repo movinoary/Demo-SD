@@ -95,6 +95,22 @@
   }
 
   .editProfile {
-    @include editModal(800px, 600px);
+    @include editModal(1200px, 600px);
+  }
+
+  .editBerita {
+    @include editModal(820px, 560px);
+  }
+
+  .editVideo {
+    @include editModal(420px, 420px);
+  }
+
+  .editAnggaran {
+    @include editModal(420px, 600px);
+  }
+
+  .editData {
+    @include editModal(420px, 320px);
   }
 }

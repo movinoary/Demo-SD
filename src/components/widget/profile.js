@@ -10,6 +10,7 @@ const WidgetProfile = () => {
   const EditModal = () => {
     setModalEdit(prev => !prev);
   };
+
   return (
     <>
       <Components.EditProfile

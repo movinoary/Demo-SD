@@ -43,9 +43,20 @@ import { WidgetKelas } from "./widget/kelas";
 import WidgetStatistics from "./widget/statistics";
 
 // Edit
-import EditAnnouncement from "./edit/announcement";
-import EditTodoList from "./edit/todoList";
-import EditProfile from "./edit/profile";
+import EditAnnouncement from "./CRUD/edit/announcement";
+import EditTodoList from "./CRUD/edit/todoList";
+import EditProfile from "./CRUD/edit/profile";
+import EditBeritaSekolah from "./CRUD/edit/beritaSekolah";
+import EditPengumumanSekolah from "./CRUD/edit/pengumumanSekolah";
+import EditBeritaHome from "./CRUD/edit/beritaHome";
+import EditGaleriFasilitas from "./CRUD/edit/editGaleriFasilitas";
+import EditGaleriKegiatan from "./CRUD/edit/editGaleriKegiatan";
+import EditGaleriVideo from "./CRUD/edit/editGaleriVideo";
+import EditDataAnggaran from "./CRUD/edit/dataAnggaran";
+import EditDataInfo from "./CRUD/edit/dataInfo";
+import EditDataMataPelajaran from "./CRUD/edit/dataMataPelajaran";
+import EditDataTahunAjaran from "./CRUD/edit/dataTahunAjaran";
+import EditDataKelas from "./CRUD/edit/dataKelas";
 
 export {
   //Other
@@ -93,4 +104,15 @@ export {
   EditAnnouncement,
   EditTodoList,
   EditProfile,
+  EditBeritaSekolah,
+  EditPengumumanSekolah,
+  EditBeritaHome,
+  EditGaleriFasilitas,
+  EditGaleriKegiatan,
+  EditGaleriVideo,
+  EditDataAnggaran,
+  EditDataInfo,
+  EditDataMataPelajaran,
+  EditDataTahunAjaran,
+  EditDataKelas,
 };

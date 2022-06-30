@@ -10,13 +10,14 @@ const BankSoalAgama = () => {
         <h1>Bank Soal Pendidikan Agama</h1>
         <div className={cssModule.Dashboard.topSelect}>
           <div>
-            <h2>Kelas</h2>
+            <h2>Pilh Soal</h2>
             <select>
-              <option hidden>Kelas | Guru</option>
-              <option>Kelas 1A | Irene </option>
-              <option>Kelas 1B | Sana </option>
-              <option>Kelas 2A | Lia </option>
-              <option>Kelas 2B | Jinni </option>
+              <option hidden>Soal</option>
+              <option>Ulangan Harian</option>
+              <option>Pekan Ulangan</option>
+              <option>Penilaian Tengah Semester</option>
+              <option>Penilaian Akhir Semester</option>
+              <option>Penilaian Akhir Tahun</option>
             </select>
           </div>
           <button> Tambah </button>
@@ -26,46 +27,18 @@ const BankSoalAgama = () => {
             <thead>
               <tr>
                 <th>No</th>
-                <th>Tema</th>
-                <th>SubTema</th>
-                <th>Pembelajaran</th>
-                <th>Soal</th>
-                <th>Jawaban</th>
-                <th>Kunci Jawaban</th>
+                <th>Judul</th>
+                <th>Jumlah Soal</th>
+                <th>DOC</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1</td>
-                <td>1</td>
-                <td>
-                  <p>1</p>
-                  <p>Baca Iqro</p>
-                </td>
-                <td>pembelajaran ke-1</td>
-                <td>Berapa Jus dalam Al-quran?</td>
-                <td>
-                  <div>
-                    <p>A</p>
-                    <p>30</p>
-                  </div>
-                  <div>
-                    <p>B</p>
-                    <p>40</p>
-                  </div>
-                  <div>
-                    <p>C</p>
-                    <p>20</p>
-                  </div>
-                  <div>
-                    <p>D</p>
-                    <p>Banyak</p>
-                  </div>
-                </td>
-                <td>
-                  <p>A</p>
-                </td>
+                <td>PTS pertama kali</td>
+                <td>20</td>
+                <td>uts.pdf</td>
                 <td>
                   <button>
                     <GrIcons.GrFormView />

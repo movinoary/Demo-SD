@@ -34,6 +34,7 @@ const DatabaseGaleri = () => {
         </Link>
       </section>
       <Routes>
+        <Route path="/" element={<Page.BlankPageNoData />} />
         <Route path="fasilitas" element={<Page.DatabaseGaleriFasilitas />} />
         <Route path="kegitan" element={<Page.DatabaseGaleriKegiatan />} />
         <Route path="video-youtube" element={<Page.DatabaseVideo />} />

@@ -134,6 +134,12 @@ const RoutesAdmin = () => {
                 path="perangkat-pembelajaran/promes"
                 element={<Page.PembelajaranPromes />}
               />
+              {/* Daftar Soal */}
+              <Route
+                exact
+                path="daftar-soal/pendidikan-agama"
+                element={<Page.DaftarSoalAgama />}
+              />
               {/* Bank Soal */}
               <Route
                 exact

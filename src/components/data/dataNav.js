@@ -2,6 +2,7 @@ import * as FaIcons from "react-icons/fa";
 import * as HiIcons from "react-icons/hi";
 import * as RiIcons from "react-icons/ri";
 import * as ImIcons from "react-icons/im";
+import * as AiIcons from "react-icons/ai";
 
 export const DataNavDashboard = [
   {
@@ -68,60 +69,118 @@ export const DataNavDashboard = [
     ],
   },
   {
-    title: "Bank Soal",
+    title: "Daftar Soal",
     icon: <RiIcons.RiClipboardFill />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
         title: "Pendidikan Agama",
-        path: "bank-soal/pendidikan-agama",
+        path: "daftar-soal/pendidikan-agama",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "PKN",
-        path: "bank-soal/pkn",
+        path: "daftar-soal/pkn",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "Bahasa Indonesia",
-        path: "bank-soal/bahasa-indonesia",
+        path: "daftar-soal/bahasa-indonesia",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "Matematika",
-        path: "bank-soal/matemaatika",
+        path: "daftar-soal/matemaatika",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "IPA",
-        path: "bank-soal/ipa",
+        path: "daftar-soal/ipa",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "IPS",
-        path: "bank-soal/ips",
+        path: "daftar-soal/ips",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "PJOK",
-        path: "bank-soal/pjok",
+        path: "daftar-soal/pjok",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "SBdP",
-        path: "bank-soal/sbdp",
+        path: "daftar-soal/sbdp",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "Bahasa Inggris",
-        path: "bank-soal/bahasa-inggris",
+        path: "daftar-soal/bahasa-inggris",
         icon: <FaIcons.FaClipboardList />,
       },
       {
         title: "Bahasa Sunda",
-        path: "bank-soal/bahasa-sunda",
+        path: "daftar-soal/bahasa-sunda",
         icon: <FaIcons.FaClipboardList />,
+      },
+    ],
+  },
+  {
+    title: "Bank Soal",
+    icon: <AiIcons.AiFillFolder />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+    subNav: [
+      {
+        title: "Pendidikan Agama",
+        path: "bank-soal/pendidikan-agama",
+        icon: <AiIcons.AiFillFolderOpen />,
+      },
+      {
+        title: "PKN",
+        path: "bank-soal/pkn",
+        icon: <AiIcons.AiFillFolderOpen />,
+      },
+      {
+        title: "Bahasa Indonesia",
+        path: "bank-soal/bank-bahasa-indonesia",
+        icon: <AiIcons.AiFillFolderOpen />,
+      },
+      {
+        title: "Matematika",
+        path: "bank-soal/matemaatika",
+        icon: <AiIcons.AiFillFolderOpen />,
+      },
+      {
+        title: "IPA",
+        path: "bank-soal/ipa",
+        icon: <AiIcons.AiFillFolderOpen />,
+      },
+      {
+        title: "IPS",
+        path: "bank-soal/ips",
+        icon: <AiIcons.AiFillFolderOpen />,
+      },
+      {
+        title: "PJOK",
+        path: "bank-soal/pjok",
+        icon: <AiIcons.AiFillFolderOpen />,
+      },
+      {
+        title: "SBdP",
+        path: "bank-soal/sbdp",
+        icon: <AiIcons.AiFillFolderOpen />,
+      },
+      {
+        title: "Bahasa Inggris",
+        path: "bank-soal/bahasa-inggris",
+        icon: <AiIcons.AiFillFolderOpen />,
+      },
+      {
+        title: "Bahasa Sunda",
+        path: "bank-soal/bahasa-sunda",
+        icon: <AiIcons.AiFillFolderOpen />,
       },
     ],
   },
