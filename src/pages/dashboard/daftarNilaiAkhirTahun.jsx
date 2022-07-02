@@ -38,7 +38,7 @@ const DaftarNilaiAkhirTahun = () => {
             <option>Bahasa Indonesia</option>
           </select>
         </div>
-        <button> Tambah </button>
+        <button> Cari </button>
       </div>
       <div className={cssModule.Dashboard.ulanganAkhirBottom}>
         <table>

@@ -80,8 +80,8 @@ $slowOut: all ease-out 0.3s;
 
 @mixin buttonTable {
   button {
-    padding: 3px;
-    font-size: $fontMS;
+    padding: 2px 3px;
+    font-size: $fontS;
     text-align: center;
     border: none;
     border-radius: 5px;
@@ -407,6 +407,13 @@ $slowOut: all ease-out 0.3s;
 
         &:focus {
           outline: none;
+        }
+
+        &::-webkit-file-upload-button {
+          background-color: $orange;
+          color: $orangeWhite;
+          border-radius: 5px;
+          border: none;
         }
       }
     }

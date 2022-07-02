@@ -1,7 +1,6 @@
 // Other
 import Nav from "./nav/nav";
 import SubNav from "./nav/subNav";
-import { DataNavDashboard, DataNavDashboardUser } from "./data/dataNav";
 import Header from "./header";
 import Footer from "./footer";
 import Title from "./title";
@@ -31,6 +30,7 @@ import {
 import WidgetCalendar from "./widget/calendar";
 import WidgetCalendarKegiatan from "./widget/calendarKegiatan";
 import WidgetUser from "./widget/user";
+import WidgetDetailProfile from "./widget/detailProfile";
 import WidgetProfile from "./widget/profile";
 import { WidgetTodoListAdmin, WidgetTodoListUser } from "./widget/todoList";
 import WidgetLink from "./widget/link";
@@ -62,8 +62,6 @@ export {
   //Other
   Nav,
   SubNav,
-  DataNavDashboard,
-  DataNavDashboardUser,
   Header,
   Footer,
   Title,
@@ -89,6 +87,7 @@ export {
   WidgetCalendar,
   WidgetCalendarKegiatan,
   WidgetUser,
+  WidgetDetailProfile,
   WidgetProfile,
   WidgetTodoListAdmin,
   WidgetTodoListUser,

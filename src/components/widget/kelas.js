@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as AiIcons from "react-icons/ai";
+import * as FcIcons from "react-icons/fc";
 import * as cssModule from "../../styles/index";
 import * as Components from "../index";
 
@@ -55,33 +56,40 @@ const WidgetKelas = () => {
             </button>
           )}
         </form>
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Tahun Ajaran</th>
-                <th>Kelas</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>2021 / 2022</td>
-                <td>Kelas 1A</td>
-                <td>
-                  <button onClick={EditModal}>
-                    <AiIcons.AiFillEdit />
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <span>
+          <FcIcons.FcDeleteDatabase />
+        </span>
       </div>
     </>
   );
 };
 
 export { WidgetKelas };
+
+{
+  /* 
+<div>
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Tahun Ajaran</th>
+      <th>Kelas</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td>
+        <div>
+          <FcIcons.FcDeleteDatabase />
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div> */
+}

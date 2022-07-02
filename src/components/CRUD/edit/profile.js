@@ -15,15 +15,15 @@ const EditProfile = ({ showModal, setShowModal }) => {
             <form>
               <div>
                 <label>Nama Lengkap</label>
-                <input type="text" placeHolder="Nanda Fauzan" />
+                <input type="text" placeholder="Nanda Fauzan" />
               </div>
               <div>
                 <label>NIP</label>
-                <input type="text" placeHolder="123123-123123" />
+                <input type="text" placeholder="123123-123123" />
               </div>
               <div>
                 <label>NIK</label>
-                <input type="text" placeHolder="1230906712389123" />
+                <input type="text" placeholder="1230906712389123" />
               </div>
               <div>
                 <label>Jenis Kelamin</label>
@@ -35,47 +35,47 @@ const EditProfile = ({ showModal, setShowModal }) => {
               </div>
               <div>
                 <label>Alamat</label>
-                <input type="text" placeHolder="jl.alamat no.29 " />
+                <input type="text" placeholder="jl.alamat no.29 " />
               </div>
               <div>
                 <label>Jabatan</label>
-                <input type="text" placeHolder="Guru Kelas 1A" />
+                <input type="text" placeholder="Guru Kelas 1A" />
               </div>
               <div>
                 <label>Golongan</label>
-                <input type="text" placeHolder="PNS" />
+                <input type="text" placeholder="PNS" />
               </div>
               <div>
                 <label>Status Perkawinan</label>
-                <input type="text" placeHolder="Jomblo" />
+                <input type="text" placeholder="Jomblo" />
               </div>
               <div>
                 <label>Mengajar Sejak</label>
-                <input type="text" placeHolder="2012" />
+                <input type="text" placeholder="2012" />
               </div>
               <div>
                 <label>Status Mengajar</label>
-                <input type="text" placeHolder="Mengajar" />
+                <input type="text" placeholder="Mengajar" />
               </div>
               <div>
                 <label>Instagram</label>
-                <input type="text" placeHolder="@sekolah_id" />
+                <input type="text" placeholder="@sekolah_id" />
               </div>
               <div>
                 <label>Facebook</label>
-                <input type="text" placeHolder="sekolah" />
+                <input type="text" placeholder="sekolah" />
               </div>
               <div>
                 <label>E-mail</label>
-                <input type="text" placeHolder="sekolah@mail.com" />
+                <input type="text" placeholder="sekolah@mail.com" />
               </div>
               <div>
                 <label>Whatsapp</label>
-                <input type="text" placeHolder="08129080706050" />
+                <input type="text" placeholder="08129080706050" />
               </div>
               <div>
                 <label>Telegram</label>
-                <input type="text" placeHolder="@id_sekolah" />
+                <input type="text" placeholder="@id_sekolah" />
               </div>
 
               <section>

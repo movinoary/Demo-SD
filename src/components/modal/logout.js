@@ -39,7 +39,7 @@ const ModalLogout = ({ showModal, setShowModal }) => {
           animate="in"
           exit="out"
           variants={Assets.animationScale}
-          transition={Assets.transition}
+          transition={Assets.transitionFast}
         >
           <motion.div
             className={cssModule.Widget.modalRow}
@@ -47,7 +47,7 @@ const ModalLogout = ({ showModal, setShowModal }) => {
             animate="in"
             exit="out"
             variants={Assets.animationTop}
-            transition={Assets.transition}
+            transition={Assets.transitionMiddle}
           >
             <div>
               <h2>Logout</h2>

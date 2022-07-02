@@ -40,7 +40,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
           animate="in"
           exit="out"
           variants={Assets.animationScale}
-          transition={Assets.transition}
+          transition={Assets.transitionFast}
         >
           <motion.div
             className={cssModule.Components.modalRow}
@@ -48,7 +48,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
             animate="in"
             exit="out"
             variants={Assets.animationTop}
-            transition={Assets.transition}
+            transition={Assets.transitionMiddle}
           >
             <div className={cssModule.Components.background}>
               <div>

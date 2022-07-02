@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as GrIcons from "react-icons/gr";
+import * as Assets from "../../assets/index";
 import * as cssModule from "../../styles/index";
 import * as Components from "../../components/index";
 
@@ -46,24 +47,26 @@ const DatabaseVideo = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Ayo Ke sekolah</td>
-                <td>www.youtube.com</td>
-                <td>
-                  <button>
-                    <Link to="/video" target="_blank">
-                      <GrIcons.GrFormView />
-                    </Link>
-                  </button>
-                  <button onClick={EditModal}>
-                    <FaIcons.FaEdit />
-                  </button>
-                  <button onClick={DeleteModal}>
-                    <AiIcons.AiFillDelete />
-                  </button>
-                </td>
-              </tr>
+              {Assets.DataGeleriVideo.map((item, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{item.judul}</td>
+                  <td>{item.link}</td>
+                  <td>
+                    <button>
+                      <Link to="/video" target="_blank">
+                        <GrIcons.GrFormView />
+                      </Link>
+                    </button>
+                    <button onClick={EditModal}>
+                      <FaIcons.FaEdit />
+                    </button>
+                    <button onClick={DeleteModal}>
+                      <AiIcons.AiFillDelete />
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

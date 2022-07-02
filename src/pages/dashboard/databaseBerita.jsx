@@ -1,5 +1,7 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import * as Assets from "../../assets/index";
 import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
 import * as GiIcons from "react-icons/gi";
@@ -43,13 +45,24 @@ const DatabaseBerita = () => {
           </h2>
         </Link>
       </section>
-      <Routes>
-        <Route path="/" element={<Page.BlankPageNoData />} />
-        <Route path="beranda" element={<Page.DatabaseBeritaBeranda />} />
-        <Route path="sekolah" element={<Page.DatabaseBeritaSekolah />} />
-        <Route path="pengumuman" element={<Page.DatabasePengumumanSekolah />} />
-        <Route path="view/*" element={<Page.Berita />} />
-      </Routes>
+      <motion.div
+        initial="out"
+        animate="in"
+        exit="end"
+        variants={Assets.animationRightToLeft}
+        transition={Assets.transitionMiddle}
+      >
+        <Routes>
+          <Route path="/" element={<Page.BlankPageNoData />} />
+          <Route path="beranda" element={<Page.DatabaseBeritaBeranda />} />
+          <Route path="sekolah" element={<Page.DatabaseBeritaSekolah />} />
+          <Route
+            path="pengumuman"
+            element={<Page.DatabasePengumumanSekolah />}
+          />
+          <Route path="view/*" element={<Page.Berita />} />
+        </Routes>
+      </motion.div>
     </>
   );
 };

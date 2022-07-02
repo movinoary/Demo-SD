@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as AiIcons from "react-icons/ai";
+import * as Assets from "../../assets/index";
 import * as Components from "../index";
 import * as cssModule from "../../styles/index";
 
@@ -71,45 +72,21 @@ const WidgetTodoListAdmin = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Kerjakan Soal UTS</td>
-                <td>12 April 2022</td>
-                <td>
-                  <button onClick={TodoModal}>
-                    <AiIcons.AiFillEdit />
-                  </button>
-                  <button onClick={DeleteModal}>
-                    <AiIcons.AiFillDelete />
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Kerjakan Soal UTS</td>
-                <td>12 April 2022</td>
-                <td>
-                  <button>
-                    <AiIcons.AiFillEdit />
-                  </button>
-                  <button onClick={DeleteModal}>
-                    <AiIcons.AiFillDelete />
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Kerjakan Soal UTS</td>
-                <td>12 April 2022</td>
-                <td>
-                  <button>
-                    <AiIcons.AiFillEdit />
-                  </button>
-                  <button onClick={DeleteModal}>
-                    <AiIcons.AiFillDelete />
-                  </button>
-                </td>
-              </tr>
+              {Assets.DataAcara.map((item, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{item.judul}</td>
+                  <td>{item.tanggal}</td>
+                  <td>
+                    <button onClick={TodoModal}>
+                      <AiIcons.AiFillEdit />
+                    </button>
+                    <button onClick={DeleteModal}>
+                      <AiIcons.AiFillDelete />
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
@@ -132,21 +109,13 @@ const WidgetTodoListUser = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Kerjakan Soal UTS</td>
-              <td>12 April 2022</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Kerjakan Soal UTS</td>
-              <td>12 April 2022</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Kerjakan Soal UTS</td>
-              <td>12 April 2022</td>
-            </tr>
+            {Assets.DataAcara.map((item, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{item.judul}</td>
+                <td>{item.tanggal}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

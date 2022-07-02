@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as GrIcons from "react-icons/gr";
+import * as Assets from "../../assets/index";
 import * as cssModule from "../../styles/index";
 import * as Components from "../../components/index";
 
@@ -36,7 +37,7 @@ const DatabaseGaleriKegiatan = () => {
           <button>Tambah</button>
         </div>
         <div>
-          <table className={cssModule.Dashboard.databaseTableGaleri}>
+          <table className={cssModule.Dashboard.databaseTableGaleriKegiatan}>
             <thead>
               <tr>
                 <th>No</th>
@@ -46,29 +47,28 @@ const DatabaseGaleriKegiatan = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>
-                  <img
-                    src="https://awsimages.detik.net.id/community/media/visual/2022/02/08/kontak-erat-covid-pengertian-cara-mengatasinya_169.jpeg?w=700&q=90"
-                    alt="berita"
-                  />
-                </td>
-                <td>12 April 2022</td>
-                <td>
-                  <button>
-                    <Link to="/" target="_blank">
-                      <GrIcons.GrFormView />
-                    </Link>
-                  </button>
-                  <button onClick={EditModal}>
-                    <FaIcons.FaEdit />
-                  </button>
-                  <button onClick={DeleteModal}>
-                    <AiIcons.AiFillDelete />
-                  </button>
-                </td>
-              </tr>
+              {Assets.DataGeleriKegiatan.map((item, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>
+                    <img src={item.image} alt="berita" />
+                  </td>
+                  <td>{item.nama}</td>
+                  <td>
+                    <button>
+                      <Link to="/" target="_blank">
+                        <GrIcons.GrFormView />
+                      </Link>
+                    </button>
+                    <button onClick={EditModal}>
+                      <FaIcons.FaEdit />
+                    </button>
+                    <button onClick={DeleteModal}>
+                      <AiIcons.AiFillDelete />
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

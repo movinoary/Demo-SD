@@ -37,7 +37,7 @@ const ModalDelete = ({ showModal, setShowModal }) => {
           animate="in"
           exit="out"
           variants={Assets.animationScale}
-          transition={Assets.transition}
+          transition={Assets.transitionFast}
         >
           <motion.div
             className={cssModule.CRUD.modalRow}
@@ -45,7 +45,7 @@ const ModalDelete = ({ showModal, setShowModal }) => {
             animate="in"
             exit="out"
             variants={Assets.animationTop}
-            transition={Assets.transition}
+            transition={Assets.transitionMiddle}
           >
             <div>
               <h2>Delete</h2>

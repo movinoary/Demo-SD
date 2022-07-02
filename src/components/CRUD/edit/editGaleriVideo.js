@@ -15,11 +15,11 @@ const EditGaleriVideo = ({ showModal, setShowModal }) => {
             <form>
               <div>
                 <label>Judul</label>
-                <input type="text" placeHolder="judul" />
+                <input type="text" placeholder="judul" />
               </div>
               <div>
                 <label>Link Youtube</label>
-                <input type="text" placeHolder="www.youtubr.com" />
+                <input type="text" placeholder="www.youtubr.com" />
               </div>
               <section>
                 <button>Simpan</button>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as GrIcons from "react-icons/gr";
+import * as Assets from "../../assets/index";
 import * as cssModule from "../../styles/index";
 import * as Components from "../../components/index";
 
@@ -42,33 +43,36 @@ const DatabaseGaleriFasilitas = () => {
                 <th>No</th>
                 <th>Image</th>
                 <th>judul</th>
+                <th>sub judul</th>
+                <th>end judul</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>
-                  <img
-                    src="https://awsimages.detik.net.id/community/media/visual/2022/02/08/kontak-erat-covid-pengertian-cara-mengatasinya_169.jpeg?w=700&q=90"
-                    alt="berita"
-                  />
-                </td>
-                <td>12 April 2022</td>
-                <td>
-                  <button>
-                    <Link to="/" target="_blank">
-                      <GrIcons.GrFormView />
-                    </Link>
-                  </button>
-                  <button onClick={EditModal}>
-                    <FaIcons.FaEdit />
-                  </button>
-                  <button onClick={DeleteModal}>
-                    <AiIcons.AiFillDelete />
-                  </button>
-                </td>
-              </tr>
+              {Assets.DataGeleriFasilitas.map((item, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>
+                    <img src={item.image} alt="berita" />
+                  </td>
+                  <td>{item.title1}</td>
+                  <td>{item.title2}</td>
+                  <td>{item.title3}</td>
+                  <td>
+                    <button>
+                      <Link to="/" target="_blank">
+                        <GrIcons.GrFormView />
+                      </Link>
+                    </button>
+                    <button onClick={EditModal}>
+                      <FaIcons.FaEdit />
+                    </button>
+                    <button onClick={DeleteModal}>
+                      <AiIcons.AiFillDelete />
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

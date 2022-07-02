@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as AiIcons from "react-icons/ai";
 import * as cssModule from "../../styles/index";
 import * as Components from "../index";
+import * as Assets from "../../assets/index";
 
 const WidgetDataAnggaran = () => {
   const [showModalDelete, setShowModalDelete] = useState(false);
@@ -75,27 +76,29 @@ const WidgetDataAnggaran = () => {
                 <th>No</th>
                 <th>Judul</th>
                 <th>Icon</th>
-                <th>Jumlah</th>
                 <th>persen</th>
+                <th>Jumlah</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Siswa</td>
-                <td>Icon</td>
-                <td>100</td>
-                <td>50%</td>
-                <td>
-                  <button onClick={EditModal}>
-                    <AiIcons.AiFillEdit />
-                  </button>
-                  <button onClick={DeleteModal}>
-                    <AiIcons.AiFillDelete />
-                  </button>
-                </td>
-              </tr>
+              {Assets.DataAnggaran.map((item, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{item.title}</td>
+                  <td>Icon</td>
+                  <td>{item.persen}</td>
+                  <td>{item.nilai}</td>
+                  <td>
+                    <button onClick={EditModal}>
+                      <AiIcons.AiFillEdit />
+                    </button>
+                    <button onClick={DeleteModal}>
+                      <AiIcons.AiFillDelete />
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

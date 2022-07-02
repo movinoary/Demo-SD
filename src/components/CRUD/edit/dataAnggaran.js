@@ -15,15 +15,15 @@ const EditDataAnggaran = ({ showModal, setShowModal }) => {
             <form>
               <div>
                 <label>Judul</label>
-                <input type="text" placeHolder="judul" />
+                <input type="text" placeholder="judul" />
               </div>
               <div>
                 <label>Jumlah</label>
-                <input type="text" placeHolder="Jumlah" />
+                <input type="text" placeholder="Jumlah" />
               </div>
               <div>
                 <label>Persen</label>
-                <input type="text" placeHolder="50%" />
+                <input type="text" placeholder="50%" />
               </div>
               <div>
                 <label>ICON</label>

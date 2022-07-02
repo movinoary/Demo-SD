@@ -1,5 +1,7 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import * as Assets from "../../assets/index";
 import * as MdIcons from "react-icons/md";
 import * as cssModule from "../../styles/index";
 import * as Page from "../index";
@@ -33,12 +35,20 @@ const DatabaseGaleri = () => {
           </h2>
         </Link>
       </section>
-      <Routes>
-        <Route path="/" element={<Page.BlankPageNoData />} />
-        <Route path="fasilitas" element={<Page.DatabaseGaleriFasilitas />} />
-        <Route path="kegitan" element={<Page.DatabaseGaleriKegiatan />} />
-        <Route path="video-youtube" element={<Page.DatabaseVideo />} />
-      </Routes>
+      <motion.div
+        initial="out"
+        animate="in"
+        exit="end"
+        variants={Assets.animationRightToLeft}
+        transition={Assets.transitionMiddle}
+      >
+        <Routes>
+          <Route path="/" element={<Page.BlankPageNoData />} />
+          <Route path="fasilitas" element={<Page.DatabaseGaleriFasilitas />} />
+          <Route path="kegitan" element={<Page.DatabaseGaleriKegiatan />} />
+          <Route path="video-youtube" element={<Page.DatabaseVideo />} />
+        </Routes>
+      </motion.div>
     </>
   );
 };

@@ -47,7 +47,7 @@ const SubNav = ({ item }) => {
                 animate="in"
                 exit="out"
                 variants={Assets.animationLeft}
-                transition={Assets.transition}
+                transition={Assets.transitionFast}
               >
                 {item.icon}
               </motion.span>
@@ -56,7 +56,7 @@ const SubNav = ({ item }) => {
                 animate="in"
                 exit="out"
                 variants={Assets.animationRight}
-                transition={Assets.transition}
+                transition={Assets.transitionFast}
               >
                 {item.title}
               </motion.p>

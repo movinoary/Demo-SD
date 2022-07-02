@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import * as Assets from "../../assets/index";
 import * as FcIcons from "react-icons/fc";
 import * as cssModule from "../../styles/index";
 
@@ -28,12 +30,19 @@ const BlankPageDashboardAdmin = () => {
 
 const BlankPageNoData = () => {
   return (
-    <div className={cssModule.Dashboard.blankPage}>
+    <motion.div
+      className={cssModule.Dashboard.blankPage}
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={Assets.animationScale}
+      transition={Assets.transitionFast}
+    >
       <span>
         <FcIcons.FcBriefcase />
       </span>
       <h1>Please Select Data</h1>
-    </div>
+    </motion.div>
   );
 };
 

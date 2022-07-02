@@ -15,7 +15,7 @@ const EditBeritaHome = ({ showModal, setShowModal }) => {
             <form>
               <div>
                 <label>Judul</label>
-                <input type="text" placeHolder="judul" />
+                <input type="text" placeholder="judul" />
               </div>
               <div>
                 <label>Tanggal</label>

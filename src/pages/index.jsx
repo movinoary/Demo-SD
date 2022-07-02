@@ -51,6 +51,9 @@ import DaftarNilaiTengahSemester from "./dashboard/daftarNilaiPenilaianTengahSem
 import DaftarNilaiAkhirSemester from "./dashboard/daftarNilaiPenilaianAkhirSemester";
 import DaftarNilaiAkhirTahun from "./dashboard/daftarNilaiAkhirTahun";
 
+// CRUD Tambah
+import AddAkun from "./dashboard/CRUD/akun";
+
 export {
   Home,
   Profile,
@@ -94,4 +97,6 @@ export {
   DaftarNilaiTengahSemester,
   DaftarNilaiAkhirSemester,
   DaftarNilaiAkhirTahun,
+  // CRUD Tambah
+  AddAkun,
 };

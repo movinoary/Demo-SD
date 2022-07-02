@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as AiIcons from "react-icons/ai";
 import * as cssModule from "../../styles/index";
 import * as Components from "../index";
+import * as Assets from "../../assets/index";
 
 const WidgetTahunAjaran = () => {
   const [modalEdit, setModalEdit] = useState(false);
@@ -56,15 +57,17 @@ const WidgetTahunAjaran = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>2022/2023</td>
-                <td>
-                  <button onClick={EditModal}>
-                    <AiIcons.AiFillEdit />
-                  </button>
-                </td>
-              </tr>
+              {Assets.DataTahunAjaran.map((item, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{item.tahun}</td>
+                  <td>
+                    <button onClick={EditModal}>
+                      <AiIcons.AiFillEdit />
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

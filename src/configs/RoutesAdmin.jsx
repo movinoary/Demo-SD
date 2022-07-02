@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Route, Routes, Link } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { Route, Routes, Link, useLocation } from "react-router-dom";
 import * as BsIcons from "react-icons/bs";
 import * as MdIcons from "react-icons/md";
 import * as Components from "../components/index";
+import * as Assets from "../assets/index";
 import * as cssModule from "../styles/index";
 import * as Page from "../pages/index";
 
@@ -10,6 +12,7 @@ const RoutesAdmin = () => {
   const [click, setClick] = useState(false);
   const [color, setColor] = useState(false);
   const [showModalLogout, setShowModalLogout] = useState(false);
+  let location = useLocation();
 
   const LogoutModal = () => {
     setShowModalLogout(prev => !prev);
@@ -84,81 +87,90 @@ const RoutesAdmin = () => {
               <h2>Irene</h2>
             </div>
             <div>
-              {Components.DataNavDashboard.map((item, index) => {
+              {Assets.DataNavDashboard.map((item, index) => {
                 return <Components.SubNav item={item} key={index} />;
               })}
             </div>
           </nav>
           <div className={cssModule.Dashboard.routeDashboard}>
-            <Routes>
-              <Route exact path="/" element={<Page.AdminDashboard />} />
-              <Route
-                exact
-                path="*"
-                element={<Page.BlankPageDashboardAdmin />}
-              />
-              {/* Database */}
-              <Route
-                exact
-                path="database/berita/*"
-                element={<Page.DatabaseBerita />}
-              />
-              <Route
-                exact
-                path="database/galeri/*"
-                element={<Page.DatabaseGaleri />}
-              />
-              <Route
-                exact
-                path="database/Sekolah"
-                element={<Page.DatabaseSekolah />}
-              />
-              {/* Perangkat Pembelajaran */}
-              <Route
-                exact
-                path="perangkat-pembelajaran/silabus"
-                element={<Page.PembelajaranSilabus />}
-              />
-              <Route
-                exact
-                path="perangkat-pembelajaran/kkm"
-                element={<Page.PembelajaranKkm />}
-              />
-              <Route
-                exact
-                path="perangkat-pembelajaran/prota"
-                element={<Page.PembelajaranProta />}
-              />
-              <Route
-                exact
-                path="perangkat-pembelajaran/promes"
-                element={<Page.PembelajaranPromes />}
-              />
-              {/* Daftar Soal */}
-              <Route
-                exact
-                path="daftar-soal/pendidikan-agama"
-                element={<Page.DaftarSoalAgama />}
-              />
-              {/* Bank Soal */}
-              <Route
-                exact
-                path="bank-soal/pendidikan-agama"
-                element={<Page.BankSoalAgama />}
-              />
-              {/* Data Siswa */}
-              <Route
-                exact
-                path="data-siswa-kelas-1"
-                element={<Page.DataSiswaKelas1 />}
-              />
-              {/* Daftar Nilai */}
-              <Route
-                exact
-                path="daftar-nilai/*"
-                element={<Page.DaftarNilai />}
-              />
-            </Routes>
+            <AnimatePresence exitBeforeEnter>
+              <Routes location={location} key={location.pathname}>
+                <Route exact path="/" element={<Page.AdminDashboard />} />
+                <Route
+                  exact
+                  path="*"
+                  element={<Page.BlankPageDashboardAdmin />}
+                />
+                <Route
+                  exact
+                  path="detail-user/:nama"
+                  element={<Components.WidgetDetailProfile />}
+                />
+                {/* Database */}
+                <Route
+                  exact
+                  path="database/berita/*"
+                  element={<Page.DatabaseBerita />}
+                />
+                <Route
+                  exact
+                  path="database/galeri/*"
+                  element={<Page.DatabaseGaleri />}
+                />
+                <Route
+                  exact
+                  path="database/Sekolah"
+                  element={<Page.DatabaseSekolah />}
+                />
+                {/* Perangkat Pembelajaran */}
+                <Route
+                  exact
+                  path="perangkat-pembelajaran/silabus"
+                  element={<Page.PembelajaranSilabus />}
+                />
+                <Route
+                  exact
+                  path="perangkat-pembelajaran/kkm"
+                  element={<Page.PembelajaranKkm />}
+                />
+                <Route
+                  exact
+                  path="perangkat-pembelajaran/prota"
+                  element={<Page.PembelajaranProta />}
+                />
+                <Route
+                  exact
+                  path="perangkat-pembelajaran/promes"
+                  element={<Page.PembelajaranPromes />}
+                />
+                {/* Daftar Soal */}
+                <Route
+                  exact
+                  path="daftar-soal/pendidikan-agama"
+                  element={<Page.DaftarSoalAgama />}
+                />
+                {/* Bank Soal */}
+                <Route
+                  exact
+                  path="bank-soal/pendidikan-agama"
+                  element={<Page.BankSoalAgama />}
+                />
+                {/* Data Siswa */}
+                <Route
+                  exact
+                  path="data-siswa-kelas-1"
+                  element={<Page.DataSiswaKelas1 />}
+                />
+                {/* Daftar Nilai */}
+                <Route
+                  exact
+                  path="daftar-nilai/*"
+                  element={<Page.DaftarNilai />}
+                />
+                {/* CRUD */}
+                <Route exact path="tambah-akun" element={<Page.AddAkun />} />
+              </Routes>
+            </AnimatePresence>
           </div>
         </section>
       </div>

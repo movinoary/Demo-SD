@@ -38,7 +38,7 @@ const DaftarNilaiPekanUlangan = () => {
             <option>Bahasa Indonesia</option>
           </select>
         </div>
-        <button> Tambah </button>
+        <button> Cari </button>
       </div>
       <div className={cssModule.Dashboard.pekanUlanganBottom}>
         <table>

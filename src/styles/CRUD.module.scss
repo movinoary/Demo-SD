@@ -1,11 +1,13 @@
 @import "./Variable.scss";
 
 .modalDelete {
-  top: 50px;
-  left: 7%;
-  width: 90%;
-  position: fixed;
+  top: -50px;
+  left: -50px;
+  width: 110%;
+  height: 110%;
+  background-color: rgba($color: $black, $alpha: 0.7);
   z-index: 9;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,10 +77,10 @@
 }
 
 .editModal {
-  top: 0;
-  left: 0;
+  top: -50px;
+  left: -50px;
   width: 100vw;
-  height: 100vh;
+  height: 110%;
   position: fixed;
   z-index: 9;
   display: flex;
@@ -112,5 +114,110 @@
 
   .editData {
     @include editModal(420px, 320px);
+  }
+}
+
+.addData {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .addBack {
+    width: 95%;
+
+    button {
+      margin: 1rem 0;
+      width: 50px;
+      height: 50px;
+      padding: 6px 0;
+      font-size: $fontL;
+      border-radius: 100%;
+      background-color: $orange;
+      border: 2px solid $orange;
+      transition: $slowIn;
+
+      &:hover {
+        background-color: transparent;
+        color: $orange;
+        padding: 6px 10px 6px 0;
+        transition: $slowOut;
+      }
+    }
+  }
+
+  h1 {
+    font-size: $fontXL;
+    color: $white;
+    margin-top: -2.5rem;
+    margin-bottom: 1rem;
+    span {
+      color: $orange;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      margin: 5px 0;
+
+      label {
+        color: $orange;
+        font-size: $fontLM;
+        margin: 7px 0;
+      }
+
+      input,
+      select {
+        background-color: $orangeGray;
+        border-radius: 3px 3px 0 0;
+        color: $orangeWhite;
+        border: none;
+        border-bottom: 1px solid $orange;
+        font-size: $fontM;
+        padding: 10px;
+
+        &::placeholder {
+          color: rgba($color: $orangeWhite, $alpha: 0.5);
+        }
+
+        &::-webkit-calendar-picker-indicator {
+          display: none;
+        }
+        &:focus {
+          outline: none;
+        }
+        &::-webkit-file-upload-button {
+          display: none;
+        }
+      }
+    }
+    button {
+      margin-top: 2rem;
+      width: 300px;
+      @include buttonStandart(
+        $orangeGray,
+        $orange,
+        $orange,
+        transparent,
+        $orange,
+        $orange,
+        $orange,
+        $orangeWhite,
+        $orangeWhite
+      );
+    }
   }
 }

@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
+import * as Assets from "../../assets/index";
 import * as Components from "../index";
 import * as cssModule from "../../styles/index";
 
 const WidgetUser = () => {
   const [click, setClick] = useState(false);
   const [showModalDelete, setShowModalDelete] = useState(false);
+  const navigate = useNavigate();
 
   const DeleteModal = () => {
     setShowModalDelete(prev => !prev);
@@ -24,7 +27,7 @@ const WidgetUser = () => {
           <h1>
             List <span> Akun</span>
           </h1>
-          <button>
+          <button onClick={() => navigate("tambah-akun")}>
             <FaIcons.FaUserPlus />
           </button>
         </div>
@@ -54,33 +57,36 @@ const WidgetUser = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>
-                  <section>
-                    <img
-                      src="https://i.pinimg.com/736x/f8/f0/a2/f8f0a252e3ebe2d13dad1373001160eb.jpg"
-                      alt="profil"
-                    />
-                    <div>
-                      <h2>Irene</h2>
-                      <p>irene@mail.com</p>
-                    </div>
-                  </section>
-                </td>
-                <td>Admin</td>
-                <td>
-                  <button>
-                    <FaIcons.FaUserCheck />
-                  </button>
-                  <button>
-                    <FaIcons.FaUserEdit />
-                  </button>
-                  <button onClick={DeleteModal}>
-                    <FaIcons.FaUserTimes />
-                  </button>
-                </td>
-              </tr>
+              {Assets.DataAkun.map((item, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>
+                    <section>
+                      <div>
+                        <img src={item.image} alt="profil" />
+                      </div>
+                      <div>
+                        <h2>{item.nama}</h2>
+                        <p>{item.email}</p>
+                      </div>
+                    </section>
+                  </td>
+                  <td>{item.role}</td>
+                  <td>
+                    <button
+                      onClick={() => navigate(`detail-user/${item.nama}`)}
+                    >
+                      <FaIcons.FaUserCheck />
+                    </button>
+                    <button>
+                      <FaIcons.FaUserEdit />
+                    </button>
+                    <button onClick={DeleteModal}>
+                      <FaIcons.FaUserTimes />
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

@@ -4,6 +4,7 @@ import * as MdIcons from "react-icons/md";
 import * as BsIcons from "react-icons/bs";
 import * as Components from "../components/index";
 import * as cssModule from "../styles/index";
+import * as Assets from "../assets/index";
 import * as Page from "../pages/index";
 
 const RoutesUser = () => {
@@ -84,7 +85,7 @@ const RoutesUser = () => {
               <h2>Irene</h2>
             </div>
             <div>
-              {Components.DataNavDashboardUser.map((item, index) => {
+              {Assets.DataNavDashboardUser.map((item, index) => {
                 return <Components.SubNav item={item} key={index} />;
               })}
             </div>

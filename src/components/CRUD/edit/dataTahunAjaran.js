@@ -15,7 +15,7 @@ const EditDataTahunAjaran = ({ showModal, setShowModal }) => {
             <form>
               <div>
                 <label>Tahun Ajaran</label>
-                <input type="text" placeHolder="Tahun Ajaran" />
+                <input type="text" placeholder="Tahun Ajaran" />
               </div>
               <section>
                 <button>Simpan</button>

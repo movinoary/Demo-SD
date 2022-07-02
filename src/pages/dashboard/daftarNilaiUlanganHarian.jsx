@@ -38,7 +38,7 @@ const DaftarNilaiUlanganHarian = () => {
             <option>Bahasa Indonesia</option>
           </select>
         </div>
-        <button> Tambah </button>
+        <button> Cari </button>
       </div>
       <div className={cssModule.Dashboard.ulanganHarianBottom}>
         <table>

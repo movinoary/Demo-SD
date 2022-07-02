@@ -15,11 +15,11 @@ const EditDataKelas = ({ showModal, setShowModal }) => {
             <form>
               <div>
                 <label>Tahun Ajaran</label>
-                <input type="text" placeHolder="Tahun Ajaran" />
+                <input type="text" placeholder="Tahun Ajaran" />
               </div>
               <div>
                 <label>Kelas</label>
-                <input type="text" placeHolder="Kelas" />
+                <input type="text" placeholder="Kelas" />
               </div>
               <section>
                 <button>Simpan</button>

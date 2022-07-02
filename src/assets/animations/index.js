@@ -15,7 +15,7 @@ export const animationTop = {
   },
   out: {
     opacity: 0,
-    y: "-100vh",
+    y: "-100%",
     scale: 0.5,
   },
 };
@@ -26,12 +26,26 @@ export const animationRight = {
     x: 0,
   },
   out: {
-    opacity: 0,
-    x: 200,
+    opacity: 1,
+    x: "100%",
   },
   end: {
     x: 0,
     opacity: 1,
+  },
+};
+export const animationRightToLeft = {
+  in: {
+    opacity: 1,
+    x: 0,
+  },
+  out: {
+    opacity: 0,
+    x: "100%",
+  },
+  end: {
+    x: "-100%",
+    opacity: 0,
   },
 };
 
@@ -42,16 +56,20 @@ export const animationLeft = {
   },
   out: {
     opacity: 0,
-    x: -200,
+    x: "-100%",
   },
   end: {
-    x: 200,
+    x: 2000,
     opacity: 1,
   },
 };
 
-export const transition = {
-  duration: 0.4,
+export const transitionFast = {
+  duration: 0.3,
+};
+
+export const transitionMiddle = {
+  duration: 0.5,
 };
 
 export const transitionSlow = {

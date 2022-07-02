@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as AiIcons from "react-icons/ai";
 import * as cssModule from "../../styles/index";
 import * as Components from "../index";
+import * as Assets from "../../assets/";
 
 const WidgetDataInfo = () => {
   const [showModalDelete, setShowModalDelete] = useState(false);
@@ -71,19 +72,21 @@ const WidgetDataInfo = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Siswa</td>
-                <td>100</td>
-                <td>
-                  <button onClick={EditModal}>
-                    <AiIcons.AiFillEdit />
-                  </button>
-                  <button onClick={DeleteModal}>
-                    <AiIcons.AiFillDelete />
-                  </button>
-                </td>
-              </tr>
+              {Assets.DataInfo.map((item, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{item.judul}</td>
+                  <td>{item.jumlah}</td>
+                  <td>
+                    <button onClick={EditModal}>
+                      <AiIcons.AiFillEdit />
+                    </button>
+                    <button onClick={DeleteModal}>
+                      <AiIcons.AiFillDelete />
+                    </button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
