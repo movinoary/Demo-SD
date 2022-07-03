@@ -4,6 +4,7 @@ import * as AiIcons from "react-icons/ai";
 import * as Configs from "../../configs/index";
 import * as Components from "../index";
 import * as cssModule from "../../styles/index";
+import * as Page from "../../pages/index";
 
 const WidgetDataInfo = () => {
   const [showModalDelete, setShowModalDelete] = useState(false);
@@ -24,7 +25,7 @@ const WidgetDataInfo = () => {
     setModalEdit(prev => !prev);
   };
 
-  let { data: infos, refetch } = useQuery("acarasCache", async () => {
+  let { data: infos, refetch } = useQuery("infosCache", async () => {
     const response = await Configs.API.get("/get-data-informasi");
     return response.data.data.data;
   });
@@ -134,8 +135,8 @@ const WidgetDataInfo = () => {
             </>
           ) : (
             <>
-              {message && message}
               <button onClick={handleClick}>
+                {message && message}
                 <p>
                   <AiIcons.AiOutlinePlus />
                 </p>
@@ -144,33 +145,37 @@ const WidgetDataInfo = () => {
           )}
         </form>
         <div>
-          <table>
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Judul</th>
-                <th>Jumlah</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {infos?.map((item, index) => (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{item.judul}</td>
-                  <td>{item.jumlah}</td>
-                  <td>
-                    <button onClick={EditModal}>
-                      <AiIcons.AiFillEdit />
-                    </button>
-                    <button onClick={() => handleDelete(item.id)}>
-                      <AiIcons.AiFillDelete />
-                    </button>
-                  </td>
+          {infos?.length != 0 ? (
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Judul</th>
+                  <th>Jumlah</th>
+                  <th>Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {infos?.map((item, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{item.judul}</td>
+                    <td>{item.jumlah}</td>
+                    <td>
+                      <button onClick={EditModal}>
+                        <AiIcons.AiFillEdit />
+                      </button>
+                      <button onClick={() => handleDelete(item.id)}>
+                        <AiIcons.AiFillDelete />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <Page.BlankSmallNoData />
+          )}
         </div>
       </div>
     </>

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import * as GiIcons from "react-icons/gi";
 import * as Configs from "../../configs/index";
 import * as cssModule from "../../styles/index";
+import * as Page from "../../pages/index";
 
 const WidgetAnnouncementAdmin = () => {
   const navigate = useNavigate();
@@ -41,10 +42,14 @@ const WidgetAnnouncementAdmin = () => {
             <div className={cssModule.Widget.announTitle}>
               <h1>Pengumuman</h1>
             </div>
-
             <div className={cssModule.Widget.announIcon}>
-              <button onClick={() => navigate(`add-pengumuman`)}>Tambah</button>
+              <button onClick={() => navigate(`tambah-pengumuman`)}>
+                Tambah
+              </button>
             </div>
+          </div>
+          <div className={cssModule.Widget.announDesc}>
+            <Page.BlankSmallNoData />
           </div>
         </div>
       )}

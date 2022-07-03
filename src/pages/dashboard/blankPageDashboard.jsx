@@ -46,4 +46,27 @@ const BlankPageNoData = () => {
   );
 };
 
-export { BlankPageDashboardUser, BlankPageDashboardAdmin, BlankPageNoData };
+const BlankSmallNoData = () => {
+  return (
+    <motion.div
+      className={cssModule.Dashboard.blankPageSmall}
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={Assets.animationScale}
+      transition={Assets.transitionFast}
+    >
+      <span>
+        <FcIcons.FcDeleteDatabase />
+      </span>
+      <h2>No Data</h2>
+    </motion.div>
+  );
+};
+
+export {
+  BlankPageDashboardUser,
+  BlankPageDashboardAdmin,
+  BlankPageNoData,
+  BlankSmallNoData,
+};

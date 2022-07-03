@@ -15,6 +15,7 @@ import {
   BlankPageDashboardUser,
   BlankPageDashboardAdmin,
   BlankPageNoData,
+  BlankSmallNoData,
 } from "./dashboard/blankPageDashboard";
 
 // Database
@@ -70,6 +71,7 @@ export {
   BlankPageDashboardUser,
   BlankPageDashboardAdmin,
   BlankPageNoData,
+  BlankSmallNoData,
   // Database
   DatabaseBerita,
   DatabaseBeritaBeranda,

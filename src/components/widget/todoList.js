@@ -5,6 +5,7 @@ import * as AiIcons from "react-icons/ai";
 import * as Configs from "../../configs/index";
 import * as Components from "../index";
 import * as cssModule from "../../styles/index";
+import * as Page from "../../pages/index";
 
 const WidgetTodoListAdmin = () => {
   const [showModalDelete, setShowModalDelete] = useState(false);
@@ -144,33 +145,37 @@ const WidgetTodoListAdmin = () => {
           )}
         </form>
         <div>
-          <table>
-            <thead>
-              <tr>
-                <th>no</th>
-                <th>Acara / Event</th>
-                <th>Pelaksanaan</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {acaras?.map((item, index) => (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{item.judul}</td>
-                  <td>{dateFormat(item.tanggal, "dddd, d mmmm yyyy ")}</td>
-                  <td>
-                    <button onClick={TodoModal}>
-                      <AiIcons.AiFillEdit />
-                    </button>
-                    <button onClick={() => handleDelete(item.id)}>
-                      <AiIcons.AiFillDelete />
-                    </button>
-                  </td>
+          {acaras?.length != 0 ? (
+            <table>
+              <thead>
+                <tr>
+                  <th>no</th>
+                  <th>Acara / Event</th>
+                  <th>Pelaksanaan</th>
+                  <th>Action</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {acaras?.map((item, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{item.judul}</td>
+                    <td>{dateFormat(item.tanggal, "dddd, d mmmm yyyy ")}</td>
+                    <td>
+                      <button onClick={TodoModal}>
+                        <AiIcons.AiFillEdit />
+                      </button>
+                      <button onClick={() => handleDelete(item.id)}>
+                        <AiIcons.AiFillDelete />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <Page.BlankSmallNoData />
+          )}
         </div>
       </div>
     </>
