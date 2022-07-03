@@ -76,6 +76,18 @@
   }
 }
 
+.editPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .editAnnouncement {
+    @include editModal(420px, 370px);
+  }
+}
+
 .editModal {
   top: -50px;
   left: -50px;
@@ -87,10 +99,6 @@
   align-items: center;
   justify-content: center;
   background-color: rgba($color: #000000, $alpha: 0.5);
-
-  .editAnnouncement {
-    @include editModal(420px, 370px);
-  }
 
   .editTodo {
     @include editModal(420px, 320px);
@@ -164,7 +172,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 15px;
-    width: 100%;
+    width: 70%;
 
     div {
       display: flex;
@@ -180,7 +188,8 @@
       }
 
       input,
-      select {
+      select,
+      textarea {
         background-color: $orangeGray;
         border-radius: 3px 3px 0 0;
         color: $orangeWhite;
@@ -220,4 +229,10 @@
       );
     }
   }
+}
+
+.alert {
+  color: $orange;
+  width: 100%;
+  font-size: $fontS;
 }

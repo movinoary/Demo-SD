@@ -1,27 +1,93 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useMutation, useQuery } from "react-query";
+import dateFormat from "dateformat";
 import * as AiIcons from "react-icons/ai";
-import * as Assets from "../../assets/index";
+import * as Configs from "../../configs/index";
 import * as Components from "../index";
 import * as cssModule from "../../styles/index";
 
 const WidgetTodoListAdmin = () => {
   const [showModalDelete, setShowModalDelete] = useState(false);
+  const [confirmDelete, setConfirmDelete] = useState(null);
+  const [idDelete, setIdDelete] = useState(null);
   const [showModalTodo, setShowModalTodo] = useState(false);
+  const [message, setMessage] = useState(null);
   const [click, setClick] = useState(false);
+  const [form, setForm] = useState({
+    judul: "",
+    tanggal: "",
+  });
+  const { judul, tanggal } = form;
 
   const handleClick = () => setClick(!click);
-
-  const DeleteModal = () => {
-    setShowModalDelete(prev => !prev);
-  };
 
   const TodoModal = () => {
     setShowModalTodo(prev => !prev);
   };
 
+  let { data: acaras, refetch } = useQuery("acarasCache", async () => {
+    const response = await Configs.API.get("/get-jadwal-acara");
+    return response.data.data.data;
+  });
+  const handleOnChange = e => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleOnSubmit = useMutation(async e => {
+    try {
+      e.preventDefault();
+
+      const config = {
+        headers: {
+          "Content-type": "application/json",
+        },
+      };
+      const body = JSON.stringify(form);
+
+      await Configs.API.post("/add-jadwal-acara", body, config);
+      const alert = (
+        <p className={cssModule.CRUD.alert}>Berhasil menambahkan Data</p>
+      );
+      setMessage(alert);
+      setClick(prev => !prev);
+    } catch (error) {
+      console.log(error);
+    }
+  });
+
+  const deleteById = useMutation(async id => {
+    try {
+      await Configs.API.delete(`/delete-jadwal-acara/${id}`);
+      refetch();
+    } catch (error) {
+      console.log(error);
+    }
+  });
+
+  const DeleteModal = () => {
+    setShowModalDelete(prev => !prev);
+  };
+
+  const handleDelete = id => {
+    setIdDelete(id);
+    DeleteModal();
+  };
+
+  useEffect(() => {
+    if (confirmDelete) {
+      setShowModalDelete(prev => !prev);
+      deleteById.mutate(idDelete);
+      setConfirmDelete(null);
+    }
+  }, [confirmDelete]);
+
   return (
     <>
       <Components.ModalDelete
+        setConfirmDelete={setConfirmDelete}
         showModal={showModalDelete}
         setShowModal={setShowModalDelete}
       />
@@ -30,16 +96,29 @@ const WidgetTodoListAdmin = () => {
         setShowModal={setShowModalTodo}
       />
       <div className={cssModule.Widget.todoList}>
-        <form>
+        <form onSubmit={e => handleOnSubmit.mutate(e)}>
           <h2>Acara / Event</h2>
           {click ? (
             <>
               <div>
-                <input type="text" id="todo" placeholder="todoList" />
+                <input
+                  type="text"
+                  id="judul"
+                  placeholder="judul"
+                  name="judul"
+                  value={judul}
+                  onChange={handleOnChange}
+                />
                 <label htmlFor="todo">Acara</label>
               </div>
               <div>
-                <input type="date" id="date" />
+                <input
+                  type="date"
+                  id="tanggal"
+                  name="tanggal"
+                  value={tanggal}
+                  onChange={handleOnChange}
+                />
                 <label htmlFor="date">Pelaksanaan</label>
               </div>
               <button>
@@ -54,11 +133,14 @@ const WidgetTodoListAdmin = () => {
               </button>
             </>
           ) : (
-            <button onClick={handleClick}>
-              <p>
-                <AiIcons.AiOutlinePlus />
-              </p>
-            </button>
+            <>
+              {message && message}
+              <button onClick={handleClick}>
+                <p>
+                  <AiIcons.AiOutlinePlus />
+                </p>
+              </button>
+            </>
           )}
         </form>
         <div>
@@ -72,16 +154,16 @@ const WidgetTodoListAdmin = () => {
               </tr>
             </thead>
             <tbody>
-              {Assets.DataAcara.map((item, index) => (
+              {acaras?.map((item, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{item.judul}</td>
-                  <td>{item.tanggal}</td>
+                  <td>{dateFormat(item.tanggal, "dddd, d mmmm yyyy ")}</td>
                   <td>
                     <button onClick={TodoModal}>
                       <AiIcons.AiFillEdit />
                     </button>
-                    <button onClick={DeleteModal}>
+                    <button onClick={() => handleDelete(item.id)}>
                       <AiIcons.AiFillDelete />
                     </button>
                   </td>
@@ -96,6 +178,12 @@ const WidgetTodoListAdmin = () => {
 };
 
 const WidgetTodoListUser = () => {
+  let { data: acaras } = useQuery("acarasCache", async () => {
+    const response = await Configs.API.get("/get-jadwal-acara");
+    console.log(response.data.data.data);
+    return response.data.data.data;
+  });
+
   return (
     <div className={cssModule.Widget.todoListUser}>
       <h2>Acara | Event</h2>
@@ -109,7 +197,7 @@ const WidgetTodoListUser = () => {
             </tr>
           </thead>
           <tbody>
-            {Assets.DataAcara.map((item, index) => (
+            {acaras?.map((item, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
                 <td>{item.judul}</td>

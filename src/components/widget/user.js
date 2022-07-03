@@ -1,24 +1,63 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useMutation, useQuery } from "react-query";
 import * as FaIcons from "react-icons/fa";
 import * as Assets from "../../assets/index";
+import * as Configs from "../../configs/index";
 import * as Components from "../index";
 import * as cssModule from "../../styles/index";
 
 const WidgetUser = () => {
   const [click, setClick] = useState(false);
+  const [idDelete, setIdDelete] = useState(null);
   const [showModalDelete, setShowModalDelete] = useState(false);
+  const [confirmDelete, setConfirmDelete] = useState(null);
   const navigate = useNavigate();
+  let api = Configs.API;
+
+  const handleClick = () => setClick(!click);
+
+  let { data: users, refetch } = useQuery("userCache", async () => {
+    const config = {
+      method: "GET",
+      headers: {
+        Authorization: "Basic " + localStorage.token,
+      },
+    };
+    const response = await api.get("/get-user", config);
+    return response.data.data.users;
+  });
+
+  const deleteById = useMutation(async id => {
+    try {
+      await api.delete(`/delete-user/${id}`);
+      refetch();
+    } catch (error) {
+      console.log(error);
+    }
+  });
 
   const DeleteModal = () => {
     setShowModalDelete(prev => !prev);
   };
 
-  const handleClick = () => setClick(!click);
+  const handleDelete = id => {
+    setIdDelete(id);
+    DeleteModal();
+  };
+
+  useEffect(() => {
+    if (confirmDelete) {
+      setShowModalDelete(prev => !prev);
+      deleteById.mutate(idDelete);
+      setConfirmDelete(null);
+    }
+  }, [confirmDelete]);
 
   return (
     <>
       <Components.ModalDelete
+        setConfirmDelete={setConfirmDelete}
         showModal={showModalDelete}
         setShowModal={setShowModalDelete}
       />
@@ -57,13 +96,13 @@ const WidgetUser = () => {
               </tr>
             </thead>
             <tbody>
-              {Assets.DataAkun.map((item, index) => (
-                <tr key={index}>
+              {users?.map((item, index) => (
+                <tr key={item.id}>
                   <td>{index + 1}</td>
                   <td>
                     <section>
                       <div>
-                        <img src={item.image} alt="profil" />
+                        <img src={Assets.imgBlank} alt="profil" />
                       </div>
                       <div>
                         <h2>{item.nama}</h2>
@@ -73,15 +112,17 @@ const WidgetUser = () => {
                   </td>
                   <td>{item.role}</td>
                   <td>
-                    <button
-                      onClick={() => navigate(`detail-user/${item.nama}`)}
-                    >
+                    <button>
                       <FaIcons.FaUserCheck />
                     </button>
                     <button>
                       <FaIcons.FaUserEdit />
                     </button>
-                    <button onClick={DeleteModal}>
+                    <button
+                      onClick={() => {
+                        handleDelete(item.id);
+                      }}
+                    >
                       <FaIcons.FaUserTimes />
                     </button>
                   </td>

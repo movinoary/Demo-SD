@@ -52,7 +52,8 @@ import DaftarNilaiAkhirSemester from "./dashboard/daftarNilaiPenilaianAkhirSemes
 import DaftarNilaiAkhirTahun from "./dashboard/daftarNilaiAkhirTahun";
 
 // CRUD Tambah
-import AddAkun from "./dashboard/CRUD/akun";
+import TambahPengumuman from "./dashboard/CRUD/tambahPengumuman";
+import TambahAkun from "./dashboard/CRUD/tambahAkun";
 
 export {
   Home,
@@ -98,5 +99,6 @@ export {
   DaftarNilaiAkhirSemester,
   DaftarNilaiAkhirTahun,
   // CRUD Tambah
-  AddAkun,
+  TambahAkun,
+  TambahPengumuman,
 };

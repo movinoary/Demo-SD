@@ -10,6 +10,7 @@ import {
 } from "./animations/index";
 
 import imageVi from "./images/vi.jpg";
+import imgBlank from "./images/blankProfile.png";
 
 import { DataNavDashboard, DataNavDashboardUser } from "./data/dataNav";
 
@@ -52,6 +53,7 @@ export {
   DataNavDashboardUser,
   //Image
   imageVi,
+  imgBlank,
   // Data Dummy
   Pengumuman,
   DataAcara,

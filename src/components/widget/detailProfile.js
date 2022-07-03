@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
 import * as Assets from "../../assets/index";
-import * as Components from "../index";
 import * as cssModule from "../../styles/index";
 
 const WidgetDetailProfile = () => {

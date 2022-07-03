@@ -1,35 +1,32 @@
-import React, { useRef } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import * as cssModule from "../../../styles/index";
 
-const EditAnnouncement = ({ showModal, setShowModal }) => {
-  const modalRef = useRef();
+const EditAnnouncement = () => {
+  const navigate = useNavigate();
 
   return (
-    <>
-      {showModal ? (
-        <div className={cssModule.CRUD.editModal} ref={modalRef}>
-          <div className={cssModule.CRUD.editAnnouncement}>
-            <h1>
-              Edit <span>Penggumuman</span>
-            </h1>
-            <form>
-              <div>
-                <label>Judul</label>
-                <input type="text" placeholder="judul" />
-              </div>
-              <div>
-                <label>Pengumuman</label>
-                <textarea placeholder="Isi Pengumuman" rows="3" />
-              </div>
-              <section>
-                <button>Simpan</button>
-                <button onClick={() => setShowModal(false)}>Batal</button>
-              </section>
-            </form>
+    <div className={cssModule.CRUD.editPage}>
+      <div className={cssModule.CRUD.editAnnouncement}>
+        <h1>
+          Edit <span>Penggumuman</span>
+        </h1>
+        <form>
+          <div>
+            <label>Judul</label>
+            <input type="text" placeholder="judul" />
           </div>
-        </div>
-      ) : null}
-    </>
+          <div>
+            <label>Pengumuman</label>
+            <textarea placeholder="Isi Pengumuman" rows="3" />
+          </div>
+          <section>
+            <button>Simpan</button>
+            <button onClick={() => navigate(`/admin-dashboard`)}>Batal</button>
+          </section>
+        </form>
+      </div>
+    </div>
   );
 };
 

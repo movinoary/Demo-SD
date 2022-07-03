@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, Link, useLocation } from "react-router-dom";
 import * as BsIcons from "react-icons/bs";
 import * as MdIcons from "react-icons/md";
-import * as Components from "../components/index";
 import * as Assets from "../assets/index";
+import * as Configs from "../configs/index";
+import * as Components from "../components/index";
 import * as cssModule from "../styles/index";
 import * as Page from "../pages/index";
 
@@ -12,6 +13,7 @@ const RoutesAdmin = () => {
   const [click, setClick] = useState(false);
   const [color, setColor] = useState(false);
   const [showModalLogout, setShowModalLogout] = useState(false);
+  const [state] = useContext(Configs.UserContext);
   let location = useLocation();
 
   const LogoutModal = () => {
@@ -80,11 +82,8 @@ const RoutesAdmin = () => {
             }
           >
             <div className={cssModule.Dashboard.profile}>
-              <img
-                src="https://i.pinimg.com/736x/f8/f0/a2/f8f0a252e3ebe2d13dad1373001160eb.jpg"
-                alt="profile"
-              />
-              <h2>Irene</h2>
+              <img src={state.user.image || Assets.imgBlank} alt="profile" />
+              <h2>{state.user.nama}</h2>
             </div>
             <div>
               {Assets.DataNavDashboard.map((item, index) => {
@@ -100,6 +99,20 @@ const RoutesAdmin = () => {
                   exact
                   path="*"
                   element={<Page.BlankPageDashboardAdmin />}
+                />
+                {/* CRUD */}
+                {/* ADD */}
+                <Route exact path="tambah-akun" element={<Page.TambahAkun />} />
+                <Route
+                  exact
+                  path="tambah-pengumuman"
+                  element={<Page.TambahPengumuman />}
+                />
+                {/* EDIT */}
+                <Route
+                  exact
+                  path="edit-pengumuman/:id"
+                  element={<Components.EditAnnouncement />}
                 />
                 <Route
                   exact
@@ -167,8 +180,6 @@ const RoutesAdmin = () => {
                   path="daftar-nilai/*"
                   element={<Page.DaftarNilai />}
                 />
-                {/* CRUD */}
-                <Route exact path="tambah-akun" element={<Page.AddAkun />} />
               </Routes>
             </AnimatePresence>
           </div>
