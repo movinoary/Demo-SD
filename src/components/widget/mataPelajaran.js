@@ -132,8 +132,8 @@ const WidgetMataPelajaran = () => {
           )}
         </form>
         {message && message}
-        <div>
-          {mataPelajarans?.length != 0 ? (
+        {mataPelajarans?.length != 0 ? (
+          <div>
             <table>
               <thead>
                 <tr>
@@ -159,10 +159,10 @@ const WidgetMataPelajaran = () => {
                 ))}
               </tbody>
             </table>
-          ) : (
-            <Page.BlankSmallNoData />
-          )}
-        </div>
+          </div>
+        ) : (
+          <Page.BlankSmallNoData />
+        )}
       </div>
     </>
   );

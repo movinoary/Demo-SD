@@ -152,8 +152,8 @@ const WidgetKelas = () => {
             </>
           )}
         </form>
-        <div>
-          {datakelas?.length != 0 ? (
+        {datakelas?.length != 0 ? (
+          <div>
             <table>
               <thead>
                 <tr>
@@ -181,10 +181,10 @@ const WidgetKelas = () => {
                 ))}
               </tbody>
             </table>
-          ) : (
-            <Page.BlankSmallNoData />
-          )}
-        </div>
+          </div>
+        ) : (
+          <Page.BlankSmallNoData />
+        )}
       </div>
     </>
   );
