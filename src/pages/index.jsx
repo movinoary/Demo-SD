@@ -15,7 +15,6 @@ import {
   BlankPageDashboardUser,
   BlankPageDashboardAdmin,
   BlankPageNoData,
-  BlankSmallNoData,
 } from "./dashboard/blankPageDashboard";
 
 // Database
@@ -53,8 +52,7 @@ import DaftarNilaiAkhirSemester from "./dashboard/daftarNilaiPenilaianAkhirSemes
 import DaftarNilaiAkhirTahun from "./dashboard/daftarNilaiAkhirTahun";
 
 // CRUD Tambah
-import TambahPengumuman from "./dashboard/CRUD/tambahPengumuman";
-import TambahAkun from "./dashboard/CRUD/tambahAkun";
+import AddAkun from "./dashboard/CRUD/akun";
 
 export {
   Home,
@@ -71,7 +69,6 @@ export {
   BlankPageDashboardUser,
   BlankPageDashboardAdmin,
   BlankPageNoData,
-  BlankSmallNoData,
   // Database
   DatabaseBerita,
   DatabaseBeritaBeranda,
@@ -101,6 +98,5 @@ export {
   DaftarNilaiAkhirSemester,
   DaftarNilaiAkhirTahun,
   // CRUD Tambah
-  TambahAkun,
-  TambahPengumuman,
+  AddAkun,
 };

@@ -51,6 +51,9 @@ function CardStatistics({ title, icon, value, percen }) {
     yaxis: {
       max: 500000000,
     },
+    fill: {
+      opacity: 1,
+    },
   };
   return (
     <div className={cssModule.Components.cardStatistics}>

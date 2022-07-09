@@ -1,84 +1,60 @@
-import React from "react";
-import { useQuery } from "react-query";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import * as GiIcons from "react-icons/gi";
-import * as Configs from "../../configs/index";
+import * as Components from "../index";
+import * as Assets from "../../assets/index";
 import * as cssModule from "../../styles/index";
-import * as Page from "../../pages/index";
 
 const WidgetAnnouncementAdmin = () => {
-  const navigate = useNavigate();
+  const [showModalEdit, setShowModalEdit] = useState(false);
 
-  let { data: pengumumans } = useQuery("pengumumanCache", async () => {
-    const response = await Configs.API.get("/get-pengumuman");
-    return response.data.data.data;
-  });
-
+  const EditModal = () => {
+    setShowModalEdit(prev => !prev);
+  };
   return (
     <>
-      {pengumumans ? (
-        <div className={cssModule.Widget.announcement}>
+      <Components.EditAnnouncement
+        showModal={showModalEdit}
+        setShowModal={setShowModalEdit}
+      />
+      {Assets.Pengumuman.map(item => (
+        <div className={cssModule.Widget.announcement} key={item}>
           <div className={cssModule.Widget.announRow}>
             <div className={cssModule.Widget.announTitle}>
               <h1>Pengumuman</h1>
-              <h3>{pengumumans?.judul}</h3>
+              <h3>{item.title}</h3>
             </div>
-
             <div className={cssModule.Widget.announIcon}>
-              <button
-                onClick={() => navigate(`edit-pengumuman/${pengumumans?.id}`)}
-              >
-                edit
-              </button>
+              <button onClick={EditModal}>edit</button>
             </div>
           </div>
           <div className={cssModule.Widget.announDesc}>
-            <p>{pengumumans?.isiPengumuman}</p>
+            <p>{item.desc}</p>
           </div>
         </div>
-      ) : (
-        <div className={cssModule.Widget.announcement}>
-          <div className={cssModule.Widget.announRow}>
-            <div className={cssModule.Widget.announTitle}>
-              <h1>Pengumuman</h1>
-            </div>
-            <div className={cssModule.Widget.announIcon}>
-              <button onClick={() => navigate(`tambah-pengumuman`)}>
-                Tambah
-              </button>
-            </div>
-          </div>
-          <div className={cssModule.Widget.announDesc}>
-            <Page.BlankSmallNoData />
-          </div>
-        </div>
-      )}
+      ))}
     </>
   );
 };
 
 const WidgetAnnouncementUser = () => {
-  let { data: pengumumans } = useQuery("pengumumanCache", async () => {
-    const response = await Configs.API.get("/get-pengumuman");
-    return response.data.data.data;
-  });
-
   return (
     <>
-      <div className={cssModule.Widget.announcement}>
-        <div className={cssModule.Widget.announRow}>
-          <div className={cssModule.Widget.announTitle}>
-            <h1>Pengumuman</h1>
-            <h3>{pengumumans?.judul}</h3>
+      {Assets.Pengumuman.map(item => (
+        <div className={cssModule.Widget.announcement} key={item}>
+          <div className={cssModule.Widget.announRow}>
+            <div className={cssModule.Widget.announTitle}>
+              <h1>Pengumuman</h1>
+              <h3>{item.title}</h3>
+            </div>
+            <div className={cssModule.Widget.announIcon}>
+              <GiIcons.GiNewspaper />
+            </div>
           </div>
-          <div className={cssModule.Widget.announIcon}>
-            <GiIcons.GiNewspaper />
+          <div className={cssModule.Widget.announDesc}>
+            <p>{item.desc}</p>
           </div>
         </div>
-        <div className={cssModule.Widget.announDesc}>
-          <p>{pengumumans?.isiPengumuman}</p>
-        </div>
-      </div>
+      ))}
     </>
   );
 };

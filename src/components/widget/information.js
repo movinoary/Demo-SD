@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as BsIcons from "react-icons/bs";
 import * as cssModule from "../../styles/index";
+import * as Components from "../index";
 
 const WidgetInformation = () => {
+  const [showModalDelete, setShowModalDelete] = useState(false);
+  const [modalEdit, setModalEdit] = useState(false);
+
+  const DeleteModal = () => {
+    setShowModalDelete(prev => !prev);
+  };
+
+  const EditModal = () => {
+    setModalEdit(prev => !prev);
+  };
+
   return (
     <section className={cssModule.Widget.cardInformasi}>
       <button>

@@ -121,46 +121,41 @@ export const DataAcara = [
     tanggal: "15-Juni-2022",
   },
 ];
+
 export const DataAnggaran = [
   {
     id: 1,
     title: "Dana Darurat",
-    icon: "fab fa-opencart",
     persen: "20%",
     nilai: "100000000",
   },
   {
     id: 2,
     title: "Dana Kesehatan",
-    icon: "fas fa-file-invoice-dollar",
     persen: "40%",
     nilai: "200000000",
   },
   {
     id: 3,
     title: "Dana Belanja",
-    icon: "fas fa-dollar-sign",
     persen: "50%",
     nilai: "250000000",
   },
   {
     id: 4,
     title: "BOS",
-    icon: "fas fa-shopping-cart",
     persen: "65",
     nilai: "350000000",
   },
   {
     id: 5,
     title: "Pembangunan",
-    icon: "fas fa-luggage-cart",
     persen: "80%",
     nilai: "400000000",
   },
   {
     id: 6,
     title: "Pemeliharaan",
-    icon: "",
     persen: "100%",
     nilai: "500000000",
   },

@@ -1208,20 +1208,3 @@
     color: $orangeWhite;
   }
 }
-
-.blankPageSmall {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  span {
-    font-size: $fontXXL;
-  }
-  h2 {
-    margin-top: -7px;
-    font-size: $fontL;
-    color: $orange;
-  }
-}

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import * as Assets from "../../assets/index";
 import * as cssModule from "../../styles/index";
 
-const ModalDelete = ({ showModal, setShowModal, setConfirmDelete }) => {
+const ModalDelete = ({ showModal, setShowModal }) => {
   const modalRef = useRef();
 
   const closeModal = e => {
@@ -26,9 +26,6 @@ const ModalDelete = ({ showModal, setShowModal, setConfirmDelete }) => {
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
 
-  const handleDelete = () => {
-    setConfirmDelete(true);
-  };
   return (
     <>
       {showModal ? (
@@ -55,7 +52,7 @@ const ModalDelete = ({ showModal, setShowModal, setConfirmDelete }) => {
               <p>Apakah anda yakin ingin Menghapus Data?</p>
             </div>
             <div>
-              <button onClick={handleDelete}>yes</button>
+              <button>yes</button>
               <button onClick={() => setShowModal(false)}>no</button>
             </div>
           </motion.div>
