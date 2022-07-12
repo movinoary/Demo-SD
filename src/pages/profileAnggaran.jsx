@@ -1,4 +1,5 @@
 import React from "react";
+import * as Assets from "../assets/index";
 import * as cssModule from "../styles/index";
 import * as Components from "../components/index";
 import { BsCartPlusFill } from "react-icons/bs";
@@ -12,36 +13,15 @@ const ProfileAnggaran = () => {
         subtitle="sekolah"
       />
       <div className={cssModule.Page.gridAnggaran}>
-        <Components.CardStatistics
-          icon={<BsCartPlusFill />}
-          percen="50%"
-          value="200000000"
-          title="anggaran"
-        />
-        <Components.CardStatistics
-          icon={<BsCartPlusFill />}
-          percen="50%"
-          value="200000000"
-          title="anggaran"
-        />
-        <Components.CardStatistics
-          icon={<BsCartPlusFill />}
-          percen="50%"
-          value="200000000"
-          title="anggaran"
-        />
-        <Components.CardStatistics
-          icon={<BsCartPlusFill />}
-          percen="50%"
-          value="200000000"
-          title="anggaran"
-        />
-        <Components.CardStatistics
-          icon={<BsCartPlusFill />}
-          percen="50%"
-          value="200000000"
-          title="anggaran"
-        />
+        {Assets.DataAnggaran.map(item => (
+          <Components.CardStatistics
+            key={item.id}
+            icon={<BsCartPlusFill />}
+            percen={item.persen}
+            value={item.nilai}
+            title={item.title}
+          />
+        ))}
       </div>
     </div>
   );

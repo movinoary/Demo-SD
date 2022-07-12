@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+import * as Data from "../assets/index";
 import * as FaIcons from "react-icons/fa";
 import * as RiIcons from "react-icons/ri";
 import * as cssModule from "../styles/index";
@@ -79,30 +80,15 @@ const Home = () => {
         </div>
         <Components.Title title="fasilitas" subTitle="sekolah" />
         <div className={cssModule.Page.rowFacility}>
-          <Components.CardFacility
-            image="https://images.pexels.com/photos/3747473/pexels-photo-3747473.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            title="Lab"
-            subTitle="Komputer"
-            endTitle="Terakomdasi"
-          />
-          <Components.CardFacility
-            image="https://i.pinimg.com/564x/a6/5d/47/a65d47cff09782e776e9a89dc97bf332.jpg"
-            title="Lab"
-            subTitle="Komputer"
-            endTitle="Terakomdasi"
-          />
-          <Components.CardFacility
-            image="https://images.pexels.com/photos/3747473/pexels-photo-3747473.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            title="Lab"
-            subTitle="Komputer"
-            endTitle="Terakomdasi"
-          />
-          <Components.CardFacility
-            image="https://images.pexels.com/photos/3747473/pexels-photo-3747473.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            title="Lab"
-            subTitle="Komputer"
-            endTitle="Terakomdasi"
-          />
+          {Data.DataGeleriFasilitas.map(item => (
+            <Components.CardFacility
+              key={item.id}
+              image={item.image}
+              title={item.title1}
+              subTitle={item.title2}
+              endTitle={item.title3}
+            />
+          ))}
         </div>
         <Components.Title title="kegiatan" subTitle="sekolah" />
         <Swiper
@@ -127,49 +113,24 @@ const Home = () => {
           modules={[Autoplay, EffectCoverflow]}
           className={cssModule.Page.swiper}
         >
-          <SwiperSlide>
-            <Components.CardActivity />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Components.CardActivity />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Components.CardActivity />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Components.CardActivity />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Components.CardActivity />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Components.CardActivity />
-          </SwiperSlide>
+          {Data.DataGeleriKegiatan.map(item => (
+            <SwiperSlide key={item.id}>
+              <Components.CardActivity image={item.image} title={item.nama} />
+            </SwiperSlide>
+          ))}
         </Swiper>
         <Components.Title title="berita" subTitle="&" endTitle="pengumuman" />
         <div className={cssModule.Page.rowNews}>
-          <Components.CardNews
-            image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample52.jpg"
-            date="23"
-            month="oct"
-            title="Jumlah Penyebaran Corona Hilang selama-lamanya"
-            category="umum"
-          />
-
-          <Components.CardNews
-            image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample52.jpg"
-            date="23"
-            month="oct"
-            title="Jumlah Penyebaran Corona Hilang selama-lamanya"
-            category="umum"
-          />
-          <Components.CardNews
-            image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample52.jpg"
-            date="23"
-            month="oct"
-            title="Jumlah Penyebaran Corona Hilang selama-lamanya"
-            category="umum"
-          />
+          {Data.DataBeritaBeranda.map(item => (
+            <Components.CardNews
+              key={item.id}
+              image={item.image}
+              date={item.angka}
+              month={item.bulan}
+              title={item.judul}
+              category={item.kategori}
+            />
+          ))}
         </div>
       </section>
     </>

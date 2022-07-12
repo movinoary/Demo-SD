@@ -2,16 +2,16 @@ import React from "react";
 import ReactPlayer from "react-player/youtube";
 import * as cssModule from "../../styles/index";
 
-const CardVideo = () => {
+const CardVideo = ({ link, title }) => {
   return (
     <div className={cssModule.Components.cardVideo}>
       <ReactPlayer
         className={cssModule.Components.player}
-        url="https://www.youtube.com/watch?v=f6YDKF0LVWw"
+        url={link}
         width="100%"
         heigth="100%"
       />
-      <h3>main air</h3>
+      <h3>{title}</h3>
     </div>
   );
 };

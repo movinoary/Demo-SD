@@ -1,5 +1,6 @@
 import React from "react";
 import * as cssModule from "../styles/index";
+import * as Assets from "../assets/index";
 import * as Components from "../components/index";
 
 const Video = () => {
@@ -13,10 +14,13 @@ const Video = () => {
       <div className={cssModule.Page.video}>
         <Components.Title title="list" subTitle="video" />
         <div className={cssModule.Page.row}>
-          <Components.CardVideo />
-          <Components.CardVideo />
-          <Components.CardVideo />
-          <Components.CardVideo />
+          {Assets.DataGeleriVideo.map(item => (
+            <Components.CardVideo
+              key={item.id}
+              link={item.link}
+              title={item.judul}
+            />
+          ))}
         </div>
       </div>
     </>

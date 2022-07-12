@@ -1,4 +1,5 @@
 import React from "react";
+import * as Assets from "../assets/index";
 import * as cssModule from "../styles/index";
 import * as Components from "../components/index";
 
@@ -11,15 +12,15 @@ const ProfileGuru = () => {
         subtitle="guru"
       />
       <div className={cssModule.Page.gridProfileGuru}>
-        <Components.CardTeacher />
-        <Components.CardTeacher />
-        <Components.CardTeacher />
-        <Components.CardTeacher />
-        <Components.CardTeacher />
-        <Components.CardTeacher />
-        <Components.CardTeacher />
-        <Components.CardTeacher />
-        <Components.CardTeacher />
+        {Assets.DataAkun.map(item => (
+          <Components.CardTeacher
+            key={item.id}
+            image={item.image}
+            mapel={item.role}
+            nama={item.nama}
+            desc={item.email}
+          />
+        ))}
       </div>
     </>
   );
