@@ -8,13 +8,13 @@ const PembelajaranKkm = () => {
   const [datas, setDatas] = useState();
 
   const getData = e => {
-    const selectId = e.target.value;
     const selectValue = Assets.DataPembelajaranKKm.filter(
-      d => d.id == selectId
+      d => d.id == e.target.value
     )[0];
     setDatas(selectValue);
   };
 
+  console.log(datas);
   useEffect(() => {
     setDatas(Assets.DataPembelajaranKKm[0]);
   }, []);

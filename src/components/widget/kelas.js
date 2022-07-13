@@ -55,31 +55,3 @@ const WidgetKelas = () => {
 };
 
 export { WidgetKelas };
-
-{
-  /* 
-<div>
-<table>
-  <thead>
-    <tr>
-      <th>No</th>
-      <th>Tahun Ajaran</th>
-      <th>Kelas</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td></td>
-      <td>
-        <div>
-          <FcIcons.FcDeleteDatabase />
-        </div>
-      </td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-</div> */
-}
