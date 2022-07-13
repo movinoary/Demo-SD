@@ -10,7 +10,7 @@ const PembelajaranPromes = () => {
   const getData = e => {
     const selectId = e.target.value;
     const selectValue = Assets.DataPembalajaranPromes.filter(
-      d => d.id == selectId
+      d => d.id === selectId
     )[0];
     setDatas(selectValue);
   };

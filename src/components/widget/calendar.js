@@ -5,8 +5,8 @@ const WidgetCalendar = () => {
   let dateTime = new Date();
   const [years] = useState(dateTime.getFullYear());
   const [dates] = useState(dateTime.getDate());
-  const [months, setMonths] = useState(dateTime.getMonth());
-  const [days, setDays] = useState(dateTime.getDay());
+  const [months] = useState(dateTime.getMonth());
+  const [days] = useState(dateTime.getDay());
   const [clockState, setClockState] = useState();
 
   useEffect(() => {

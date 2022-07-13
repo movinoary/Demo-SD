@@ -9,7 +9,7 @@ const PembelajaranKkm = () => {
 
   const getData = e => {
     const selectValue = Assets.DataPembelajaranKKm.filter(
-      d => d.id == e.target.value
+      d => d.id === e.target.value
     )[0];
     setDatas(selectValue);
   };
