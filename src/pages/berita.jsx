@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import * as Page from "./index";
+import * as Data from "../assets/index";
 import * as Components from "../components/index";
 import * as cssModule from "../styles/index";
 
@@ -15,80 +16,22 @@ const Berita = () => {
         subtitle="Pengumuman"
       />
       <Routes>
-        <Route path="/1" element={<Page.DetailBerita />} />
+        <Route path="/:judul" element={<Page.DetailBerita />} />
       </Routes>
       <div className={cssModule.Page.news}>
         <Components.Title title="Berita" subTitle="sekolah" />
         <div className={cssModule.Page.row}>
-          <Components.CardNews
-            image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample52.jpg"
-            date="23"
-            month="oct"
-            title="Jumlah Penyebaran Corona Hilang selama-lamanya"
-            category="umum"
-            onclick={() => navigasi("1")}
-          />
-          <Components.CardNews
-            image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample52.jpg"
-            date="23"
-            month="oct"
-            title="Jumlah Penyebaran Corona Hilang selama-lamanya"
-            category="umum"
-          />
-          <Components.CardNews
-            image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample52.jpg"
-            date="23"
-            month="oct"
-            title="Jumlah Penyebaran Corona Hilang selama-lamanya"
-            category="umum"
-          />
-          <Components.CardNews
-            image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample52.jpg"
-            date="23"
-            month="oct"
-            title="Jumlah Penyebaran Corona Hilang selama-lamanya"
-            category="umum"
-          />
-        </div>
-        <Components.Title subTitle="pengumuman" endTitle="sekolah" />
-        <div className={cssModule.Page.row}>
-          <Components.CardNews
-            image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample52.jpg"
-            date="23"
-            month="oct"
-            title="Jumlah Penyebaran Corona Hilang selama-lamanya"
-            category="umum"
-          />
-          <Components.CardNews
-            image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample52.jpg"
-            date="23"
-            month="oct"
-            title="Jumlah Penyebaran Corona Hilang selama-lamanya"
-            category="umum"
-          />
-        </div>
-        <div className={cssModule.Page.row}>
-          <Components.CardNews
-            image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample52.jpg"
-            date="23"
-            month="oct"
-            title="Jumlah Penyebaran Corona Hilang selama-lamanya"
-            category="umum"
-          />
-          <Components.CardNews
-            image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample52.jpg"
-            date="23"
-            month="oct"
-            title="Jumlah Penyebaran Corona Hilang selama-lamanya"
-            category="umum"
-          />
-          <Components.CardNews
-            image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample52.jpg"
-            date="23"
-            month="oct"
-            title="Jumlah Penyebaran Corona Hilang selama-lamanya"
-            category="umum"
-          />
+          {Data.DataBeritaBeranda.map(item => (
+            <Components.CardNews
+              onclick={() => navigasi(`${item.judul}`)}
+              key={item.id}
+              image={item.image}
+              date={item.angka}
+              month={item.bulan}
+              title={item.judul}
+              category={item.kategori}
+            />
+          ))}
         </div>
       </div>
     </>

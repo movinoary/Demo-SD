@@ -52,14 +52,14 @@ const Nav = () => {
             className={cssModule.Components.navLink}
             onClick={closeMobileMenu}
           >
-            <p>home</p>
+            <p>Beranda</p>
           </Link>
           <Link
             to="profile"
             className={cssModule.Components.navLink}
             onClick={closeMobileMenu}
           >
-            <p>profile</p>
+            <p>profil</p>
           </Link>
           <Link
             to="berita"
@@ -76,7 +76,7 @@ const Nav = () => {
             <p>video</p>
           </Link>
           <button className={cssModule.Components.navLink} onClick={LoginModal}>
-            Login
+            Masuk
           </button>
         </div>
       </nav>

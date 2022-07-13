@@ -79,10 +79,10 @@ const RoutesUser = () => {
           >
             <div className={cssModule.Dashboard.profile}>
               <img
-                src="https://i.pinimg.com/564x/11/50/82/115082111ba44cb03a13f6efafd09d2b.jpg"
+                src="https://i.pinimg.com/736x/8d/8f/ae/8d8fae621adaf2b4516d2b9f22a0b93d.jpg"
                 alt="profile"
               />
-              <h2>Irene</h2>
+              <h2>Kim Tae-ri</h2>
             </div>
             <div>
               {Assets.DataNavDashboardUser.map((item, index) => {

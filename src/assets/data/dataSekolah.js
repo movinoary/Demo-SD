@@ -68,7 +68,7 @@ export const DataAkun = [
     image:
       "https://i.pinimg.com/736x/8d/8f/ae/8d8fae621adaf2b4516d2b9f22a0b93d.jpg",
     nama: "Kim Tae-ri",
-    email: "na-huido@mail.com",
+    email: "na-haido@mail.com",
     role: "Guru",
   },
   {
@@ -298,6 +298,8 @@ export const DataPengumumanSekolah = [
     id: 1,
     judul: "Tanggal Ujian Berubah",
     tanggal: "15-April-2022",
+    angka: "15",
+    bulan: "April",
     image:
       "https://asset.kompas.com/crops/fjKcRo8XOilNiRTqimbZz5nsw0k=/0x0:885x590/750x500/data/photo/2020/07/27/5f1e3e8b7d508.jpeg",
     isiBerita:
@@ -315,6 +317,8 @@ export const DataBeritaSekolah = [
     id: 1,
     judul: "Corona Semakin Memudar",
     tanggal: "12-April-2022",
+    angka: "12",
+    bulan: "April",
     image:
       "https://awsimages.detik.net.id/community/media/visual/2022/02/08/kontak-erat-covid-pengertian-cara-mengatasinya_169.jpeg?w=700&q=90",
     isiBerita:
@@ -329,6 +333,8 @@ export const DataBeritaSekolah = [
     id: 2,
     judul: "Mahasiswa diliburkan selamanya",
     tanggal: "13-April-2022",
+    angka: "13",
+    bulan: "April",
     image: "https://cdn-image.hipwee.com/wp-content/uploads/2015/11/Wisuda.jpg",
     isiBerita:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque quas, optio debitis cupiditate quo, quos, iusto similique eaque porro possimus ipsa repudiandae? Aperiam aliquid officia suscipit quidem magnam doloribus nostrum? Consequuntur ipsa architecto, quod laudantium possimus repellat quo eligendi cumque nisi ducimus magnam quidem? Officiis adipisci vitae nihil labore modi quis doloremque saepe molestias dolorum! Maiores quam veniam labore esse cumque placeat nam! Quis sint reprehenderit nulla earum atque ut labore magni accusamus numquam deleniti fuga aspernatur in eos magnam, dolor impedit esse debitis ad animi quia! Dolorum quod numquam reprehenderit voluptatem exercitationem dolores, molestias atque nemo id eaque aperiam!",
@@ -343,26 +349,40 @@ export const DataBeritaSekolah = [
 export const DataGeleriKegiatan = [
   {
     id: 1,
-    nama: "Pentas Seni",
+    nama: "Naik Gunung",
     image:
-      "https://t-2.tstatic.net/medan/foto/bank/images/pentas-seni_20170322_175714.jpg",
+      "https://images.unsplash.com/photo-1467139701929-18c0d27a7516?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     id: 2,
-    nama: "Pramuka",
+    nama: "Main Bola",
     image:
-      "https://cdn0-production-images-kly.akamaized.net/WqKF3lKc_B7Ad5KE-Sp7C4dxO4Y=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2329031/original/089900800_1534214958-087792400_1471226502-Sejarah-Singkat-Kepramukaan-di-Indonesia.jpg",
+      "https://images.unsplash.com/photo-1622659097509-4d56de14539e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
   },
   {
     id: 3,
-    nama: "Donor Darah",
+    nama: "Wisuda",
     image:
-      "https://asset.kompas.com/crops/h9qbLlKeY6kbSXqfsP0wY8Tzqhc=/0x0:0x0/780x390/data/photo/2020/03/26/5e7c97ee008fc.jpg",
+      "https://images.unsplash.com/photo-1558168674-2505c71112eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
   {
     id: 4,
-    nama: "Sunat Masal",
-    image: "https://blorakab.go.id/resource/doc/post/181215150350KHITAN-3.jpg",
+    nama: "Belajar",
+    image:
+      "https://images.unsplash.com/photo-1610484826917-0f101a7bf7f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+  },
+  {
+    id: 5,
+    nama: "Healing",
+    image:
+      "https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=948&q=80",
+  },
+
+  {
+    id: 6,
+    nama: "bermain",
+    image:
+      "https://images.unsplash.com/photo-1627764940620-90393d0e8c34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },
 ];
 

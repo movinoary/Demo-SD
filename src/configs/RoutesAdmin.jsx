@@ -81,7 +81,7 @@ const RoutesAdmin = () => {
           >
             <div className={cssModule.Dashboard.profile}>
               <img
-                src="https://i.pinimg.com/736x/f8/f0/a2/f8f0a252e3ebe2d13dad1373001160eb.jpg"
+                src="https://i.pinimg.com/564x/a8/af/46/a8af468d375599b57c80e9c2d1a34a80.jpg"
                 alt="profile"
               />
               <h2>Irene</h2>

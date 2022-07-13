@@ -31,7 +31,7 @@ import WidgetCalendar from "./widget/calendar";
 import WidgetCalendarKegiatan from "./widget/calendarKegiatan";
 import WidgetUser from "./widget/user";
 import WidgetDetailProfile from "./widget/detailProfile";
-import WidgetProfile from "./widget/profile";
+import { WidgetProfile, WidgetProfileGuru } from "./widget/profile";
 import { WidgetTodoListAdmin, WidgetTodoListUser } from "./widget/todoList";
 import WidgetLink from "./widget/link";
 import WidgetInformation from "./widget/information";
@@ -89,6 +89,7 @@ export {
   WidgetUser,
   WidgetDetailProfile,
   WidgetProfile,
+  WidgetProfileGuru,
   WidgetTodoListAdmin,
   WidgetTodoListUser,
   WidgetLink,

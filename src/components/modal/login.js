@@ -54,7 +54,7 @@ const ModalLogin = ({ showModal, setShowModal }) => {
               <div>
                 <AiIcons.AiOutlineClose
                   className={cssModule.Components.close}
-                  onClick={() => navigate("/admin-dashboard")}
+                  onClick={setShowModal(true)}
                 />
                 <h1>Login</h1>
                 <form>
@@ -62,12 +62,16 @@ const ModalLogin = ({ showModal, setShowModal }) => {
                   <input type="email" placeholder="school@mail.com" />
                   <label>password</label>
                   <input type="password" placeholder="********" />
-                  <button>login</button>
+                  {/* <button>login</button> */}
                 </form>
-                <button onClick={() => navigate("user-dashboard")}>user</button>
-                <button onClick={() => navigate("admin-dashboard")}>
-                  admin
-                </button>
+                <div>
+                  <button onClick={() => navigate("user-dashboard")}>
+                    user
+                  </button>
+                  <button onClick={() => navigate("admin-dashboard")}>
+                    admin
+                  </button>
+                </div>
               </div>
             </div>
           </motion.div>

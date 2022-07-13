@@ -444,6 +444,27 @@
             );
           }
         }
+
+        div {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          button {
+            margin: 20px;
+            @include buttonStandart(
+              $blue,
+              $blueWhite,
+              $blue,
+              $blueWhite,
+              $blue,
+              $blue,
+              $blueDark,
+              $blueWhite,
+              $blueDark
+            );
+          }
+        }
       }
     }
   }

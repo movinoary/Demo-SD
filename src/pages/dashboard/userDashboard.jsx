@@ -11,7 +11,7 @@ const UserDashboard = () => {
           <Compoennts.WidgetAnnouncementUser />
           <Compoennts.WidgetTodoListUser />
         </div>
-        <Compoennts.WidgetProfile />
+        <Compoennts.WidgetProfileGuru />
       </div>
     </div>
   );

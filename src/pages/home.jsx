@@ -1,6 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow } from "swiper";
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import * as Data from "../assets/index";
@@ -10,6 +11,7 @@ import * as cssModule from "../styles/index";
 import * as Components from "../components/index";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Components.Header
@@ -65,15 +67,18 @@ const Home = () => {
         <div className={cssModule.Page.grid}>
           <Components.CardLink
             icon={<FaIcons.FaSchool />}
+            onclick={() => navigate(`/profile`)}
             title="profile"
             subtitle="sekolah"
           />
           <Components.CardLink
+            onclick={() => navigate(`/profile/guru`)}
             icon={<FaIcons.FaChalkboardTeacher />}
             title="profile"
             subtitle="Guru"
           />
           <Components.CardLink
+            onclick={() => navigate(`/profile/anggaran`)}
             icon={<RiIcons.RiLineChartFill />}
             title="Anggaran"
           />
@@ -123,6 +128,7 @@ const Home = () => {
         <div className={cssModule.Page.rowNews}>
           {Data.DataBeritaBeranda.map(item => (
             <Components.CardNews
+              onclick={() => navigate(`/berita/${item.judul}`)}
               key={item.id}
               image={item.image}
               date={item.angka}
