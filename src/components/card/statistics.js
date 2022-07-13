@@ -30,9 +30,6 @@ function CardStatistics({ title, icon, value, percen }) {
       width: 0,
     },
     colors: ["#95d1cc"],
-    fill: {
-      opacity: 1,
-    },
     subtitle: {
       floating: true,
       align: "right",
