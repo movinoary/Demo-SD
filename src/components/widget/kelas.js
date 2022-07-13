@@ -2,24 +2,14 @@ import React, { useState } from "react";
 import * as AiIcons from "react-icons/ai";
 import * as FcIcons from "react-icons/fc";
 import * as cssModule from "../../styles/index";
-import * as Components from "../index";
 
 const WidgetKelas = () => {
-  const [modalEdit, setModalEdit] = useState(false);
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
 
-  const EditModal = () => {
-    setModalEdit(prev => !prev);
-  };
-
   return (
     <>
-      <Components.EditDataKelas
-        showModal={modalEdit}
-        setShowModal={setModalEdit}
-      />
       <div className={cssModule.Widget.kelas}>
         <form>
           <h2>Daftar Kelas</h2>
